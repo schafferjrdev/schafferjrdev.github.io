@@ -1,0 +1,1755 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+[class*="col-"] {
+    float: left;
+    padding: 0px;
+    
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+
+
+body{	
+    
+	background-color: #132A2E;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+
+}
+
+#complete{
+    display: none;
+}
+
+
+.Progress {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  background-color: rgba(100,100,100,0.5);
+  box-shadow: 5px 7px 5px rgba(0,0,0,0.2);
+  margin-bottom: 5%;
+}
+
+
+#myBarDes2{
+  position: relative;
+  width: 5%;
+  height: 100%;
+  background-color: rgb(230,40,40);
+}
+
+#myBarAud2 {
+  position: relative;
+  
+  width: 5%;
+  height: 100%;
+  background-color: rgb(60,200,60);
+}
+
+#myBarSist2 {
+  position: relative;
+  
+  width: 5%;
+  height: 100%;
+  background-color: #508ADF;
+}
+
+#fimTrilha{
+    font-family: VERDANA;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#goTrilha{
+    margin-left: 4.15%;
+    margin-top: 16.66%;
+    
+}
+
+.barrinhas{
+    margin-top: 8.33%;
+}
+
+
+
+/*::-webkit-scrollbar{
+    display: none;
+}*/
+
+#respon{
+    width: 100%;
+    height: 100%;
+}
+
+#logoSMD{
+	
+	
+	background-color: #FCFBFB;
+	float: left;
+	cursor: pointer;
+    
+
+}
+
+
+
+#menuFixo{
+    width: 100%;
+	position: fixed;
+	top:0;
+	left:0;
+    float:right;
+    z-index: 99;
+    
+
+}
+
+#menuGlobal {
+    
+	font-size:16px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    font-family: VERDANA;
+    font-weight: bold;
+    overflow: hidden;
+    background-color: #FCFBFB;
+    /*background-color: red;*/
+
+    
+}
+
+#setinha{
+    position: relative;
+    top:10;
+}
+
+.menuGlobalclass{
+    
+}
+
+#menuGlobal li{
+    
+}
+
+
+
+
+
+
+li {
+    float: left;
+
+    
+}
+
+li a, .dropbtn {
+    position: relative;
+    display: inline-block;
+    color: #aaa;
+    text-align: center;
+    padding: 12% 15px;
+    
+    cursor:pointer;
+    text-decoration: none;
+    height: 54px;
+    transition: color 0.6s ease;
+}
+
+#pagInicialBtn{
+
+}
+
+#matrizBtn{
+margin-top:-3%;
+}
+
+#trilhasBtn{
+    margin-top:2%;
+}
+
+
+.dropbtn{
+   z-index: 1000;
+   position: relative;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    color: black;
+}
+
+#audiovisualBtn:hover{
+    background-color: RGBA(60,200,60,0.7); 
+}
+
+#sistemaBtn:hover{
+    background-color: RGBA(80,128,250,0.7);
+}
+
+#designBtn:hover{
+    background-color:RGBA(230,40,40,0.7);    
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.mercadin{
+    margin-left: 8.66%;
+    
+    font-size: 14px;
+    font-family: VERDANA;
+
+}
+.titul{
+    font-family: VERDANA;
+    margin-left: 8.66%;
+    margin-top: 5%;
+}
+
+#mercado3 a{
+    color: rgb(80,128,250);  
+}
+#mercado2 a{
+    color: rgb(230,40,40);  
+}
+#mercado a{
+    color: rgb(60,200,60);  
+}
+
+.mercadin h1{
+    font-family: VERDANA;
+}
+
+
+ a:link {
+    text-decoration: none;
+}
+
+ a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+.vid{
+    margin-left: 0.25%;
+    margin-top: 0.5%;
+    max-height: 720px;
+}
+
+
+.active{
+    color:black;
+}
+
+.edured{
+    color:red;
+}
+
+.dropdown-content {
+    z-index: 9999;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+}
+
+.dropdown-content a {
+    z-index: 100;
+    color: #aaa;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: background-color 0.6s ease;
+    transition: color 0.6s ease;
+}
+
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    z-index: 100;
+
+}
+
+
+
+.imgWrap {
+  position: relative;
+  /*height: 200px;
+  width: 257px;*/
+}
+
+.imgDescription {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+
+
+  visibility: hidden;
+  opacity: 0;
+
+ 
+  -webkit-transition: visibility opacity 0.2s;
+  
+}
+
+
+.imgWrap:hover .imgDescription {
+  visibility: visible;
+  opacity: 1;
+}
+
+#portifolio2{
+    height: 1500px;
+}
+
+#solerImg{
+    margin-left: 16.33%;
+}
+
+#sistImg{
+    margin-left: 16.33%;
+}
+
+ .legenda{
+            position: relative;
+            background-color: RGBA(60,200,60,0.7);
+            height: 25%;
+            width: 100%;
+            padding-left: 2%;
+            color:#fff;
+            font-family: VERDANA;
+            position: absolute;
+            bottom: 0;
+            font-size: 42px;
+            text-align: right;
+            z-index: 50;    
+        }
+
+
+
+@media screen and (min-width: 1500px) {
+       .legenda{
+            position: relative;
+            background-color: RGBA(60,200,60,0.7);
+            height: 18%;
+            width: 100%;
+            top:7.4em;
+            color:#fff;
+            font-family: VERDANA;
+            font-size: 42px;
+            text-align: right;
+            z-index: 50;
+              
+        }
+
+}
+
+@media screen and (min-width: 1500px) {
+
+   .legenda p{
+    position: relative;
+    right:5%;
+    bottom: 1.001em;
+}
+
+.legenda hr{
+    position: relative;
+    
+    bottom: 2.199em;
+}
+
+.legenda .textoThrilha{
+    position: relative;
+    
+    bottom: 2.99em;
+}
+
+
+
+}
+
+
+
+
+
+#legendaDesign{
+    background-color: RGBA(230,40,40,0.7);
+
+}
+
+#legendaSistema{
+    background-color: RGBA(80,128,250,0.7);
+}
+
+.titulosTrilha{
+    position: relative;
+    right:5%;
+    bottom: 70%;
+}
+
+.linhaTitulo{
+    position: relative;
+    color:#fff;
+    border-width: 2px;
+    border-color: #fff;
+    border-style: solid;
+    width: 95%;
+    bottom:110%;
+}
+
+.textoThrilha{
+    position: relative;
+    font-size: 24px;
+    width: 94%;
+    text-align: left;
+    bottom:115%;
+    left: 4%;
+}
+
+
+
+.parallax {
+    z-index: -1;
+    position: relative;
+    
+    width: 100%;
+    margin: 0em;
+    /*Imagem usada*/
+    background-image: url("img/foto1.jpg");
+
+    /* Altura da imagem*/
+    min-height: 500px; 
+    
+    /*Criar o efeito*/
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+/*
+    -webkit-background-attachment: fixed;
+    -webkit-background-position: center;
+    -webkit-background-repeat: no-repeat;
+    -webkit-background-attachment: fixed;*/
+    
+
+    -moz-background-attachment: fixed;
+    -moz-background-position: center;
+    -moz-background-repeat: no-repeat;
+    -moz-background-attachment: fixed;
+    
+}
+
+
+@media screen and (min-width: 1500px){
+    .parallax{
+        background-size: 100%;
+    }
+    
+
+}
+
+
+.parallax2 {
+    z-index: -1;
+  /*  position: absolute;*/
+    position: relative;
+    
+    top:-10%;
+    width: 100%;
+    margin: 0em;
+    /*Imagem usada*/
+    background-image: url("img/foto2.jpg");
+
+    /* Altura da imagem*/
+    min-height: 500px; 
+    
+    /*Criar o efeito*/
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+ /*   -webkit-background-attachment: fixed;
+    -webkit-background-position: center;
+    -webkit-background-repeat: no-repeat;
+    -webkit-background-attachment: fixed;*/
+
+
+    
+    -moz-background-attachment: fixed;
+    -moz-background-position: top;
+    -moz-background-repeat: no-repeat;
+    -moz-background-attachment: fixed;
+    
+    
+}
+
+
+@media screen and (min-width: 1500px){
+    .parallax2{
+        background-size: 100%;
+    }
+    
+
+}
+
+.parallax3 {
+    z-index: -1;
+    position: relative;
+    
+    width: 100%;
+    margin: 0em;
+    /*Imagem usada*/
+    background-image: url("img/foto3.jpg");
+
+    /* Altura da imagem*/
+    min-height: 500px; 
+    
+    /*Criar o efeito*/
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+/*
+    -webkit-background-attachment: fixed;
+    -webkit-background-position: center;
+    -webkit-background-repeat: no-repeat;
+    -webkit-background-attachment: fixed;
+    */
+
+    -moz-background-attachment: fixed;
+    -moz-background-position: center;
+    -moz-background-repeat: no-repeat;
+    -moz-background-attachment: fixed;
+    
+    
+}
+
+
+@media screen and (min-width: 1500px){
+    .parallax3{
+        background-size: 100%;
+    }
+    
+
+}
+
+
+
+.menuLocal{
+    z-index: 90;
+    width: 100%;
+    top:500px;
+    position: fixed;
+    background-color: #FCFBFB;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000;
+    padding-left: 16.33%;
+
+    text-decoration: none;
+
+
+    /*pacity: 0.2;*/
+    
+
+}
+
+@media screen and (min-width: 1500px){
+    .menuLocal{
+        padding-left: 25%;
+    }
+}
+
+.menuLocal a{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    cursor: pointer;
+    display: inline-block;
+    color: #666;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.6s ease;
+    transition: color 0.6s ease;
+}
+
+.menuLocal a:hover{
+    background-color: #ddd;     
+}
+
+
+
+
+#menuLocal {
+    position:relative;
+    font-size:18px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-family: VERDANA;
+    overflow: hidden;
+    background-color: #FCFBFB;
+    
+}
+
+#siteConteudo{
+    display: none;
+    height: 80%;
+    
+   
+}
+
+.conteudo{
+    position:relative;
+    top:95%;
+    width: 105%;
+    height: 855px;
+    background-color: #fff;
+
+    cursor: default;
+    
+   
+}
+
+#educacao,#educacao2,#educacao3{
+     height: 1255px;
+}
+
+@media screen and (min-width: 1500px){
+    .conteudo{
+        position:relative;
+        top:95%;
+        width: 105%;
+        height: 1455px;
+        background-color: #fff;
+    
+   
+}
+}
+
+#educacao, #educacao2, #educacao3{
+    
+
+}
+
+#portifolio, #portifolio2, #portifolio3{
+    background-color: #1D3749;
+     background-image: url("img/texture5.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 60%;
+}
+
+#mercado, #mercado2, #mercado3{
+    background-color: #fff;
+}
+
+#depoimento, #depoimento2, #depoimento3{
+    background-color: #1D3749;
+     background-image: url("img/texture5.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 60%;
+}
+
+
+footer{
+    margin:0;
+    color:#888;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    min-height: 20%;
+    background-color: #132A2E;
+    padding-top: 2%;
+    padding-bottom: 2%;
+      
+
+
+
+}
+
+footer p{
+    margin:0;
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+.design{
+display: none;
+}
+.sistema{
+    display: none;
+}
+
+.corpoSiteHome{
+    position: relative;
+    min-height: 100%;
+}
+
+
+
+#siteInicial{
+    position: relative;
+    width: 110%;
+    min-height: 100%;
+    background-color: #fff;
+    color:#fff;
+    font-size: 14px;
+    padding-top: 20%;
+    /*padding-bottom: 9.6%;
+    padding-top:10%;
+    */
+
+    padding-bottom: 20%;
+
+    background-image: url("img/texture5.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 60%;
+
+
+   
+    
+}
+
+#siteInicial section{
+    /*text-align: justify;*/
+    position: relative;
+    font-family: VERDANA;
+    left: 4%;
+    top: -15%;
+    width: 50%;
+}
+
+#siteInicial section p{
+    font-size: 18px;
+}
+
+.silhueta{
+    position: relative;
+    width: 20%;
+    height: 20%;
+    opacity: 0.7;
+    right: 21%;
+    
+    float:right;
+    
+}
+
+
+
+@media screen and (min-width: 1500px) {
+      
+/*#siteInicial img{
+    position: relative;
+    width: 20%;
+    height: 20%;
+    top:-15em;
+    right: 25%;
+    float:right;
+    
+}*/
+
+ 
+
+}
+
+
+
+
+.conteudo article{
+    font-family: VERDANA;   
+    position: relative;
+    top:6%;
+    left: 8.33%;
+}
+
+.conteudo h1{
+    color:rgb(60,200,60);
+    font-size: 30px;
+}
+
+.conteudo .col-10{
+
+}
+
+
+.conteudo .col-3{
+    background-color: #ddd;
+    margin-left: 8.33%;
+    
+}
+
+.conteudo .col-3 p{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+
+    border-bottom: solid rgb(60,200,60) 1px;
+
+
+}
+
+
+.conteudo .col-3 div{
+    
+    font-size:20px;
+    text-align: center;
+    background-color: rgb(60,200,60);
+    color:#fff;
+    padding-bottom: 5px;
+    padding-top: 5px;
+
+}
+
+.conteudo .col-6 div{
+
+
+
+}
+
+
+.conteudo .col-8{
+    margin-left: 8.33%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*SLideshow Portfólio*/
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.activer, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .slprev, .slnext,.text {font-size: 11px}
+}
+
+/*FIM SLIDESHOW*/
+
+
+
+
+/*MONTE SUA MATRIZ*/
+
+
+
+
+#siteMatriz .col-7{
+    margin-left: 4.16%;
+
+
+
+    
+}
+
+
+#siteMatriz .btnSemestres{
+    font-size: 20px;
+    margin-left: 2.07%;
+    height: 80px;
+    background-color:rgba(123,165,172,0.5);
+
+    border:none;
+    color: #eee;
+    cursor: default;
+   
+}
+
+.btnSemestres:focus{
+    outline: none;
+}
+
+
+
+.block{
+    background-color: #eee;
+    font-size: 20px;
+    margin-left: 2.07%;
+    height: 80px;
+    border:none;
+    cursor: not-allowed;
+}
+
+
+
+#siteMatriz #personagemCaixa{
+    /*width: 25%;*/
+    background-color: rgba(0,0,0,0.25);
+    padding-bottom: 2%;
+    padding-left: 2.7%;
+
+}
+
+.errorMessage{
+    background: rgba(0,0,0,0.8);
+    position: fixed;
+    z-index: 999;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:none;
+    padding-top: 200px; /* Location of the box */
+   
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+
+   
+
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:200px; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:200px; opacity:1}
+}
+
+.erroText{
+    padding: 15px;
+    width: 40%;
+    margin-left:30%;
+    height: 100px;
+    background-color: #eee;
+    color:#132A2E;
+    /*top:30%;
+    left:40%;*/
+    /*margin-left: calc(50% - 50px);*/
+    /*margin-top: 25%;*/
+    font-size: 24px;
+    position: absolute;
+
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+    
+}
+
+#close{
+    font-family: VERDANA;
+    font-weight: bold;    
+    color:#999;
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    cursor: pointer;
+    position: absolute;
+    top:0;
+    right: 0;
+
+}
+
+#close:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#close2{
+    font-family: VERDANA;
+    font-weight: bold;    
+    color:#999;
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    cursor: pointer;
+    position: absolute;
+    top:1%;
+    right: 0;
+
+}
+
+#close2:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+.escolhaChar{
+    display: none;
+    background-image: url("img/texture5.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 60%;
+    height: 880px; 
+
+}
+
+.choose{
+    position: relative;
+    top:25%;
+    left:30%;
+    margin-left: 2%;
+    border: 6px solid rgba(0,0,0,0);
+    cursor: pointer;
+
+}
+.choose:hover{
+    background-color: rgba(0,0,0,0.2);
+    transition: background-color 0.6s ease;
+
+}
+
+@media screen and (min-width: 1500px){
+    .choose{
+        top:40%;
+        left:50%;
+    }
+}
+
+@media screen and (min-width: 1500px){
+   .escolhaChar{
+    width: 100%;
+    height: 1080px; 
+
+}
+}
+
+
+.chooseC{
+    float:left;
+}
+
+.escolher{
+    position: relative;    
+    top:19%;
+    left:19%;
+
+}
+
+.color1, .color2{
+  cursor:pointer;
+  height: 16px;
+  width: 16px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  position: relative;
+  top:450px;
+  left:-220px;
+ 
+    
+}
+
+.color1:hover, .color2:hover{
+    background-color: #fff;
+}
+
+
+
+.color2{
+    background-color: #666;
+}
+
+
+
+
+#siteMatriz{
+    display: none;
+     background-image: url("img/texture5.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 60%;
+
+    position: relative;
+    background-color:#132A2E;
+    
+    height: 1920px; 
+    font-family: VERDANA;
+    padding-top: 5%;
+    padding-bottom: 15%;
+    /*margin-top:8%;*/
+    padding-left: 5%;
+    width: 105%;
+    color: #fff;
+
+}
+
+@media screen and (min-width: 1500px){
+        #siteMatriz{
+            height: 2220px;
+    }
+}
+
+
+
+.semSeg .cadeiras{
+    margin-bottom: 5%;
+}
+
+#sem123{
+    
+}
+
+#sem456{
+    display: none;
+}
+
+#sem78{
+    display: none;
+}
+
+.semestres label{
+    
+}
+
+.semIni, .semSeg{
+    
+    margin-top: 5%;
+
+}
+
+.segTril{
+    display: none;
+}
+
+.fimCurs{
+    display: none;
+}
+
+.image-container img{
+    width: 80%;
+
+}
+
+.cadeiras{
+    margin-left: -2.7%;
+    text-align: left;
+    margin-bottom: 3%;
+    font-size: 18px;
+    width: 450px;
+    color:#132A2E;
+    background-color: #eee;
+    
+    box-shadow: 6px 10px 5px rgba(0,0,0,0.3);
+    border: solid 4px rgba(0,0,0,0);
+    cursor: pointer;
+}
+
+.cadeiras:hover{
+    background-color: #fff;
+
+
+}
+.cadeiras:focus{
+    
+    outline: none;
+}
+
+
+.semestres{
+    height: 900px;
+    /*background-color: red;*/
+    margin-left: 5.7%;
+    margin-top: 2%;
+    
+}
+
+.semestres p{
+    margin-left: 2%;
+}
+
+#popUp{
+    display: none;
+    width: 28%;
+    padding: 0;
+    z-index: 99;
+    height: 377px;
+    position: fixed;
+    background-color: #fff;
+    overflow: scroll;
+    overflow-x:hidden;
+    margin-left: 66.66%;
+    margin-top: 7.33%;
+    box-shadow: 5px 7px 5px rgba(0,0,0,0.4);
+  
+}
+
+@media screen and (min-width: 1500px){
+    #popUp{
+       margin-left: 52.66%;
+       height: 400px; 
+    }
+
+}
+
+
+/*Acordeon*/
+.sanfona{
+
+    width: 100%;
+    border:none;
+    color:#eee;
+    background-color: #132A2E;
+    cursor: pointer;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+    font-size: 15px;
+    padding: 18px;
+     border:solid 2px rgba(0,0,0,0);
+     transition: 0.6s ease;
+
+
+}
+.escol{
+    background-color: #666;
+    /*cursor: not-allowed;*/
+
+}
+
+
+::selection {
+    color: #fff;
+    background: #ccc;
+}
+
+input.sanfona:hover {
+    background-color: #aaa;
+    border:solid 2px #132A2E;
+    background-color: #eee;
+    color:#132A2E;
+}
+
+.cSelecionavel span:after{
+    position: absolute;
+    font-family: VERDANA;
+    font-weight: bold;
+    font-size: 12px;
+    color:#aaa;
+    margin-left: -12%;
+    margin-top: 4%;
+    content: '\02795';
+    transition: 0.6s ease;
+}
+
+@media screen and (min-width: 1500px){
+    .cadSelect{
+        margin-top: 5%;
+    }
+}
+
+.cSelecionavel span.minus:after{
+content: '\02796';
+transition: 0.6s ease;
+}
+
+
+
+.confirmar{
+    width: 30%;
+    border: none;
+    color:#eee;
+    background-color: #132A2E;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow:3px 5px 3px rgba(0,0,0,0.3);
+    padding:5px;
+    border:solid 2px rgba(0,0,0,0);
+    margin-left:35%;
+
+
+}
+
+.confirmar:hover{
+    background-color: #eee;
+    color:#132A2E;
+    transition: color 0.4s ease;
+    transition: background-color 0.4s ease;
+    border:solid 2px #132A2E;
+    
+}
+
+.confirmar:focus{
+    outline: none;
+}
+
+
+.textObrig{
+   
+    color:black;
+    font-size: 13px;
+    word-wrap: break-word;
+    padding: 0 18px;
+    background-color: white;
+    margin-bottom: 5%;
+    transition: 0.6s ease-in-out;
+}
+
+.prereqObrig{
+   
+    color:black;
+    font-size: 13px;
+    word-wrap: break-word;
+    padding: 0 18px;
+    background-color: white;
+    margin-bottom: 5%;
+    transition: 0.6s ease-in-out;
+    font-style: italic;
+}
+
+.headObrig{
+    width: 100%;
+    border:none;
+    color:#eee;
+    background-color: #132A2E;
+    
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+    font-size: 15px;
+    padding: 18px;
+     border:solid 2px rgba(0,0,0,0);
+     transition: 0.6s ease;
+}
+
+.textin{
+    display: none;
+}
+
+.preR{
+    display: none;
+}
+
+.preRall{
+    font-style: italic;
+}
+
+
+
+.conteudoCad{
+    display: none;
+    color:black;
+    font-size: 13px;
+    word-wrap: break-word;
+    padding: 0 18px;
+    background-color: white;
+    margin-bottom: 5%;
+    transition: 0.6s ease-in-out;
+
+}
+
+
+.cadSelect{
+    position: absolute;
+    top:16.33%;
+    left:4%;
+    transition: 0.6s ease-in-out;
+
+
+}
+
+.cSelecionavel{
+    overflow: auto;
+    margin-left: -5%;
+    margin-top: -8%;
+    transition: 0.6s ease-in-out;
+
+    
+}
+
+.highli{
+    background-color:#132A2E;
+    color:#eee;
+}
+.highli:hover{
+    background-color: #1A3A40;
+    color:#eee;
+}
+
+
+
+.bolinhasTrilha{
+    width: 39px;
+    z-index: 20;
+    cursor: default;
+    height: 10px;
+
+    position: relative;
+    top:7px;
+    left:425px;
+}
+
+.bolinhasTrilha2{
+    padding-top: 15px;
+    padding-bottom: 30px;
+    width: 90px;
+    z-index: 70;
+    cursor: default;
+    height: 10px;
+    position: relative;
+    margin-left: 38%;
+   
+}
+
+
+
+.bolas{
+    position:   absolute;   
+    margin-top: -13px;
+    margin-left: 100px;
+}
+
+#bSI{
+ margin-left: 70px;
+
+}
+
+#bDE{
+    margin-left: 62px;
+}
+
+#bAD{
+    
+}
+
+.audBall{
+    float: left;
+    width: 10px;
+    height: 10px;
+    color:rgb(60,200,60);
+    background-color: rgb(60,200,60);
+    border-radius: 100%;
+    margin-right: 2px;
+}
+
+.desBall{
+    float: left;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(230,40,40);
+    color: rgb(230,40,40);
+    border-radius: 100%;
+    margin-right: 2px;
+}
+
+
+.sisBall{
+    float: left;
+    width: 10px;
+    height: 10px;
+    background-color: #508ADF;
+    color: #508ADF;
+    border-radius: 100%;
+    margin-right: 2px;
+}
+
+.bSel{
+    height: 25px;
+    width: 25px;
+}
+
+/*Barra stats*/
+#myProgress {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  background-color: rgba(100,100,100,0.5);
+  box-shadow: 5px 7px 5px rgba(0,0,0,0.2);
+  margin-bottom: 5%;
+}
+
+
+#myBarDes {
+  position: relative;
+  width: 5%;
+  height: 100%;
+  background-color: rgb(230,40,40);
+}
+
+#myBarAud {
+  position: relative;
+  
+  width: 5%;
+  height: 100%;
+  background-color: rgb(60,200,60);
+}
+
+#myBarSist {
+  position: relative;
+  
+  width: 5%;
+  height: 100%;
+  background-color: #508ADF;
+}
+
+#personagemCaixa{
+    box-shadow: 10px 10px 5px rgba(0,0,0,0.4);
+}
+
+
+.accs{
+    position: relative;
+    z-index: 30;
+    padding-top:10%;
+    
+
+}
+.accBck{
+    position: relative;
+    padding-top:10%;
+}
+
+/*.acc2{
+    position: relative;
+    z-index: 30;
+    padding-top:10%;
+    
+
+}*/
+
+.image-container {
+    position: relative;
+    
+    
+   
+}
+
+/*hover Image*/
+.image-container .after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    color: #FFF;
+}
+/*.image-container:hover .after {
+    display: block;
+   
+}*/
+
+.avatar{
+    position: relative;
+    margin:auto;
+    padding-top:10%;
+    
+}
+
+
+.btnNavig{
+    width: 150px;
+    border: none;
+    color:#eee;
+    background-color: #132A2E;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 6px 10px 5px rgba(0,0,0,0.3);
+    margin-top: 5%;
+    padding:10px;
+    border:solid 2px rgba(0,0,0,0);
+
+
+}
+
+.btnNavig:hover{
+    background-color: #eee;
+    color:#132A2E;
+    transition: color 0.4s ease;
+    transition: background-color 0.4s ease;
+    border:solid 2px #132A2E;
+    
+}
+
+.btnNavig:active{
+    background-color: #ddd;
+}
+
+.btnNavig:focus{
+    outline: none;
+}
+
+.btnPross{
+    float:right;
+    margin-right: 42%;
+     
+}
+
+.btnAnte{
+    margin-left: 4%;
+    float:left;
+}
