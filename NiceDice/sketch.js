@@ -10,25 +10,44 @@ var oldNum=1;
 var countF = 0;
 var diceEnd = false;
 
+var sound;
+
+var soundRoll = false;
+
+function preload() {
+  sound = loadSound("dice.mp3");
+  
+}
+
 function setup() {
   createCanvas(w, h,WEBGL);
+  
+ }
 
-
+function togglePlay(){
+  if(!sound.isPlaying()){
+   sound.play();
+  }
 }
+
+
 
 function draw() {
   background(127);
   //print(mouseX);
 
+
+
   push();
   if(dice){
+    togglePlay();
     countF++;
     rotateX(countF*0.15);
     rotateY(countF*0.15);
     count+= 0.1;
 
-    if(count>9){
-
+    if(count>6){
+      sound.stop();
       dice = false;
       count = 0;
       countF = 0;
