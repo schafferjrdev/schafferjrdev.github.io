@@ -1,6 +1,6 @@
 
-var h = 600;
-var w = 400;
+var h = 500;
+var w = 320;
 
 var dice = false;
 var count = 0;
@@ -193,16 +193,21 @@ if(oldNum == 2 || oldNum == 5){
   
   pop();
 
-        
-        
+ if(mouseX <= w/2 + 50 && mouseX >= w/2 -50 && mouseY <= h/2 +50 && mouseY > h/2 -50){
+  cursor(HAND);
+ }else{
+  cursor(ARROW);
+ }       
 
   
 }
 
 
 function mouseReleased() {
-  dice = true;
-  num = round(random(1,6));
+  if(mouseX <= w/2 + 50 && mouseX >= w/2 -50 && mouseY <= h/2 +50 && mouseY > h/2 -50)  {
+   dice = true;
+    num = round(random(1,6));
+}
 
   
 }
