@@ -31,8 +31,9 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
 
 
 body{
-	position: relative;
-
+	position: absolute;
+	overflow-y: auto;
+	min-width: 1280px;
 	background-color: #222;
 	padding: 0;
 	margin: 0;
@@ -211,174 +212,95 @@ input:-webkit-autofill:active {
     	padding-left: 1%;
 }
 
+.pessoa{
+	max-width: 1050px;
+	padding-bottom: 20px;
+	margin-top: 3px;
+}
 
 
 	</style>
+	<script>
+		
+		$( document ).ready(function() {
+			$('.checkboxes').click(function(){
+				var name = $(this).attr("name");
+				console.log(name);
+
+				if(name == "Die"){
+					$(this).parent().fadeOut( 1000 );
+
+				}
+			});
+
+			
+
+		$(".time").keyup(function() {
+			var tamanho = $(this).val();
+			console.log(tamanho);
+			if(tamanho == "Werewolf" || tamanho == "Alpha Wolf"){
+				$(this).parent().css("background-color","#701F1F");
+			}else{
+				$(this).parent().css("background-color","#222");
+			}
+		});
+
+		$(".time").focusin(function() {
+			var tamanho = $(this).val();
+			console.log(tamanho);
+			if(tamanho == "Werewolf" || tamanho == "Alpha Wolf"){
+				$(this).parent().css("background-color","#701F1F");
+			}else{
+				$(this).parent().css("background-color","#222");
+			}
+		});
+
+		$(".time").focusout(function() {
+			var tamanho = $(this).val();
+			console.log(tamanho);
+			if(tamanho == "Werewolf" || tamanho == "Alpha Wolf"){
+				$(this).parent().css("background-color","#701F1F");
+			}else{
+				$(this).parent().css("background-color","#222");
+			}
+		});
+
+
+
+		});
+
+
+
+	</script>
 </head>
 <body>
 <div class="conteudo">
+	<p>Lobos x <p>Aldeia</p></p>
 	
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
+	<div class="pessoa">
+	<input class="caixa nome" list="lista"  type="text" placeholder="Nome" >
+	<input class="caixa time" list="lista2"  type="text" placeholder="Classe" >
+	<input type="checkbox" class="checkboxes"  name="Die" >Morreu
+	<input type="checkbox" class="checkboxes"  name="Protect" >Protegido
+	<input type="checkbox" class="checkboxes" name="Love" >Amor
+	</div>
 
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
+<div class="pessoa">
+	<input class="caixa nome" list="lista"  type="text" placeholder="Nome" >
+	<input class="caixa time" list="lista2"  type="text" placeholder="Classe" >
+	<input type="checkbox" class="checkboxes"  name="Die" >Morreu
+	<input type="checkbox" class="checkboxes"  name="Protect" >Protegido
+	<input type="checkbox" class="checkboxes" name="Love" >Amor
+	</div>
 
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
+	<div class="pessoa">
+	<input class="caixa nome" list="lista"  type="text" placeholder="Nome" >
+	<input class="caixa time" list="lista2"  type="text" placeholder="Classe" >
+	<input type="checkbox" class="checkboxes"  name="Die" >Morreu
+	<input type="checkbox" class="checkboxes"  name="Protect" >Protegido
+	<input type="checkbox" class="checkboxes" name="Love" >Amor
+	</div>
 
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
-
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
-
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
-
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
-
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
-
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
-
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
-
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
-
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
-
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
-
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
-
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
-
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
-
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
-
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
-
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
-
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
-
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
-
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
-
-	<input class="caixa" list="lista"  type="text" placeholder="Nome" >
-	<input class="caixa" list="lista2"  type="text" placeholder="Classe" >
-	<input type="checkbox" class="checkboxes"  >Morreu
-	<input type="checkbox" class="checkboxes"  >Protegido
-	<input type="checkbox" class="checkboxes"  >Amor
-	<br>
-	
 
 	
 
