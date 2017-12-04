@@ -1,0 +1,53 @@
+
+*{
+	color: #ccc;
+	margin: 0 auto;
+}
+body{
+	background-color: #222;
+	max-width: 400px;
+	margin-top: 20px;
+}
+
+
+
+button{
+	background-color: #444;
+	border: solid 1px;
+	cursor: pointer;
+	font-size: 18px;
+	width: 100px;
+	margin-top: 10px;
+
+				
+
+}
+button:hover{
+	background-color: #ccc;
+	color: #444;
+	-webkit-transition: ease 0.5s; /* Safari */
+	transition: ease 0.5s;
+	-moz-transition: ease 0.5s;
+	-o-transition: ease 0.5s;
+
+}
+
+button:focus{
+	outline: none;
+}
+
+
+#snapshot, #player {
+			display: none;
+}
+
+#usaCamera{
+	margin-left: 50px;
+	min-width: 200px;
+}
+
+#capture{
+	margin-left: 50px;
+	min-width: 200px;
+}
+
