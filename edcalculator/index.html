@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Calculadora do Edgar</title>
+	<style type="text/css">
+		*{
+
+			 font-size: 18px;
+			 font-family: 'Courier New';
+			 color:#ccc;
+			
+
+		}
+		body{
+			background-color: #222;
+			color: #ccc;
+		}
+		input{
+
+				width: 70px;
+				margin-bottom: 10px;
+				margin-right: 15px;
+				padding-left: 5px;
+				color:#ccc;
+				background-color: #444;
+				border:solid 1px;
+			}
+
+			#btn{
+				background-color: #444;
+				border: solid 1px;
+				cursor: pointer;
+				font-size: 24px;
+				
+
+			}
+			#btn:hover{
+				background-color: #ccc;
+				color: #444;
+				-webkit-transition: ease 0.5s; /* Safari */
+			    transition: ease 0.5s;
+			    -moz-transition: ease 0.5s;
+			    -o-transition: ease 0.5s;
+
+			}
+
+			#btn:focus{
+				outline: none;
+
+			}
+			.corpo{
+				margin-left: 20px;
+				margin-top: 50px;
+			}
+			
+	</style>
+	<script type="text/javascript">
+
+		function Calcular() {
+			
+		if(document.getElementById("pn2").value == ""){
+			var pn1 = parseInt(document.getElementById("pn1").value);
+			var pn2;
+			var tp1 = parseInt(document.getElementById("tp1").value);
+			var tp2 = parseInt(document.getElementById("tp2").value);
+			var mps = parseInt(document.getElementById("mps").value);
+			var pi = parseInt(document.getElementById("pi").value);
+			var media = 7;
+
+			var mtp = (tp1+tp2)/2;
+
+			pn2 = (media - ((pn1*0.2)+(mtp*0.1)+(mps*0.1)+(pi*0.3)))/0.3;
+			pn2 = pn2.toFixed(2);
+			document.getElementById("resultado").innerHTML = "Você precisa de um <b>"+pn2+"</b> para passar de conceito A";
+
+		}else{
+			var pn1 = parseInt(document.getElementById("pn1").value);
+			var pn2 = parseInt(document.getElementById("pn2").value);
+			var tp1 = parseInt(document.getElementById("tp1").value);
+			var tp2 = parseInt(document.getElementById("tp2").value);
+			var mps = parseInt(document.getElementById("mps").value);
+			var pi = parseInt(document.getElementById("pi").value);
+			
+							
+				var cor;
+				var mtp = (tp1+tp2)/2;
+
+				var result = (pn1*0.2)+(pn2*0.3)+(mtp*0.1)+(mps*0.1)+(pi*0.3);
+
+				result = result.toFixed(2);
+
+				if(result < 7){
+					cor = "red";
+				}else{
+					cor = "green";
+				}
+
+				document.getElementById("resultado").innerHTML = `Sua média é <label style='color: ${cor};'> ${result} </label>`;
+
+			
+				
+			}
+		}
+
+	</script>
+</head>
+<body>
+	<div class="corpo">
+		<p>Se você deixar PD2 vazio, vai saber quanto precisa para passar.</p>
+		<input placeholder="PD1" id="pn1" onFocus="value=''">Plano de Negócio parte 1<br>
+		<input placeholder="PD2" id="pn2" onFocus="value=''">Plano de Negócio parte 2<br>
+		<input placeholder="TP1" id="tp1" onFocus="value=''">Trabalho Parcial 1<br>
+		<input placeholder="TP2" id="tp2" onFocus="value=''">Trabalho Parcial 2<br>
+		<input placeholder="MPS" id="mps" onFocus="value=''">Média da Participação em Sala<br>
+		<input placeholder="PI" id="pi" onFocus="value=''">Prova Individual<br><br>
+		<button id="btn" onclick="Calcular()">Calcular</button><br>
+		<p id="resultado"></p>
+	</div>
+</body>
+</html>
