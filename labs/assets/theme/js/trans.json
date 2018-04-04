@@ -1,0 +1,165 @@
+//Colocar as traduções
+
+textoBR = { 
+	"nome":"Laboratório de Biotecnologia e Síntese Orgânica",
+
+    "texto": "O Laboratório de Biotecnologia e Síntese Orgânica (LABS) tem como objetivo produzir moléculas orgânicas com alto valor agregado através do emprego de processos enzimáticos (enzimas isoladas ou células íntegras) ou do isolamento de fontes naturais (plantas ou micro-organismos).",
+
+    "membros": "Membros do grupo",
+
+    "prof": "Professores",
+    
+    "tProf": "PROFESSORES",
+
+    "posdoc": "Pós-doutorandos",
+
+    "doc": "Doutorandos",
+
+    "mestrandos": "Mestrandos",
+
+    "ic": "Iniciação científica",
+
+    "pesquisa": "Linhas de pesquisa",
+
+    "pesq1": "Biocatálise",
+
+    "pesq2":"Biotransformação",
+
+    "pesq3":"Química de Produtos Naturais",
+
+    "projetos": "Projetos",
+
+    "publicacoes": "Publicações",
+
+    "patentes": "Patentes",
+
+    "colab": "Colaborações internacionais",
+
+    "infraestrutura": "Infraestrutura",
+
+    "reunioes": "Reuniões de grupo",
+
+    "reunioesInfo": "Nossas reuniões de grupo para discutir resultados de pesquisa e artigos de literatura ocorrem nas sextas-feiras (quinzenalmente), das 13:00 as 11:45h. Além destas reuniões, os assuntos relativos ao andamento do laboratório são discutidos trimestralmente, também nas sextas-feiras, das 13:00 as 11:45h.",
+
+    "fomento": "Agências de fomento",
+
+    "links": "Links",
+
+    "local": "Localização",
+
+    "ufc": "Universidade Federal do Ceará",
+
+    "btnMateria":"Matéria da UFC",
+
+    "entreEmContato": "Entre em contato",
+
+    "nomeContato": "Nome",
+
+    "telefoneContato": "Telefone",
+
+    "emailContato":"Email",
+
+    "mensagemContato": "Mensagem",
+
+    "telefone": "Telefone",
+
+    "obrigado": "Obrigado por entrar em contato!",
+
+    "enviar": "ENVIAR"
+
+
+           
+
+
+}
+
+
+
+
+
+
+
+
+textoEN = { 
+	
+    "nome":"Laboratory of Biotechnology and Organic Synthesis",
+
+    "texto": "The Laboratory of Biotechnology and Organic Synthesis (LABS) aims to produce organic molecules with high added value through the use of enzymatic processes (isolated enzymes or whole-cells) as well as the isolation from natural sources (plants or microorganisms).",
+
+    "membros": "Group members",
+
+    "prof": "Professors",
+
+    "tProf": "PROFESSORS",
+
+    "posdoc": "Post-doctors",
+
+    "doc": "Doctorate students",
+
+    "mestrandos": "Master degree students",
+
+    "ic": "Undergraduate students",
+
+    "pesquisa": "Research lines",
+
+    "pesq1": "Biocatalysis",
+
+    "pesq2":"Biotransformation",
+
+    "pesq3":"Natural Products Chemistry",
+
+    "projetos": "Projects",
+
+    "publicacoes": "Publications",
+
+    "patentes": "Patents",
+
+    "colab": "International collaborations",
+
+    "infraestrutura": "Infrastructure",
+
+    "reunioes": "Group meetings",
+
+    "reunioesInfo": "Our group meetings to discuss research results and literature articles occur on Fridays (fortnightly) from 1:00 to 1:45 pm. In addition to these meetings, matters relating to the progress of the laboratory are discussed quarterly, also on Fridays from 1:00 to 1:45 pm.",
+
+    "fomento": "Funding agencies",
+
+    "links": "Links",
+
+    "local": "Location",
+
+    "ufc": "Universidade Federal do Ceará",
+
+    "btnMateria":"UFC's featured article",
+
+    "entreEmContato": "Drop a Line",
+
+    "nomeContato": "Name",
+
+    "telefoneContato": "Telephone",
+
+    "emailContato":"Email",
+
+    "mensagemContato": "Message",
+
+    "telefone": "Telephone",
+
+    "obrigado": "Thank you for contacting us!",
+
+    "enviar": "SEND"
+
+}
+
+
+
+
+
+
+
+
+
+textoES = { 
+
+
+}
+
