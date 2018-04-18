@@ -1,0 +1,146 @@
+
+<html><head><meta charset="UTF-8">
+<title>Bracket Top</title>
+<link rel="icon" type="image/png" href="imgs/favicon.png">
+<script>
+function validateForm() {
+    if (document.forms['f']["email"].value == '') {
+        alert("Please enter your email");
+        return false;
+    } else {
+	var s = document.forms['f']['s'];
+	s.disabled=true;
+	s.value='Saving..';
+	return 1;
+    }
+}
+function clickedOn(idnum,childnum) {
+	var was = document.getElementById("img"+childnum).src;
+	document.getElementById("img"+childnum).src = document.getElementById("img"+idnum).src;
+	if (was.substr(-9,9) != 'pixel.png') {
+	    // switch it and all children too.
+		for (var i = childnum; i < 64; i++) {
+			if (document.getElementById("img"+i).src == was) {
+				document.getElementById("img"+i).src = document.getElementById("img"+idnum).src;
+			}
+		}
+	}
+	var anyblanks = 0;
+	var passer = 'http://disneybracket.com/lock2?q=';
+	passer = '';
+	for (var i = 33; i < 64; i++) {
+		if (document.getElementById("img"+i).src.substr(-9,9) == 'pixel.png') {
+			anyblanks = 1;
+		}
+		var path = document.getElementById("img"+i).src.split("/");
+		var img = path.pop();
+		passer = passer + img.substring(0,img.length-4) + ':';
+	}
+	if (!anyblanks) {
+//		document.getElementById("lock").href=passer;
+		document.getElementById("lock").value=passer;
+		document.getElementById("locktext").style="position:absolute;left:10px;top:10px;color:black;font-family:sans-serif;visibility:visible";
+		document.getElementById("clicktext").style="visibility:hidden;position:absolute";
+		document.getElementById("email").focus();
+		window.scrollTo(0,0);
+//		console.log(passer);
+	}
+}
+</script>
+</head><body>
+<b id="clicktext" style="position:absolute;left:10px;top:10px;color:black;font-family:sans-serif;visibility:visible">Quem é o mais top, viado?</b>
+</b>
+<br>
+<br>
+<div style="top:100px;">
+<img src="./imgs/brackett.png"   style="position:absolute;top:59px;left:0px;">
+<img src="./imgs/logoSMD.png" width="224" style="position:absolute;top:20px;left:980px;margin-bottom:200px;">
+
+			<a href="javascript:void(0)" onclick="clickedOn(41,53)"><img id="img41" src="./imgs/pixel.png" width="120" height="42" style="position:absolute;top:501px;left:195px"></a>
+			<a href="javascript:void(0)" onclick="clickedOn(42,53)"><img id="img42" src="./imgs/pixel.png" width="120" height="42" style="position:absolute;top:557px;left:195px"></a>
+			<a href="javascript:void(0)" onclick="clickedOn(43,54)"><img id="img43" src="./imgs/pixel.png" width="120" height="42" style="position:absolute;top:613px;left:195px"></a>
+			<a href="javascript:void(0)" onclick="clickedOn(44,54)"><img id="img44" src="./imgs/pixel.png" width="120" height="42" style="position:absolute;top:669px;left:195px"></a>
+			<a href="javascript:void(0)" onclick="clickedOn(45,55)"><img id="img45" src="./imgs/pixel.png" width="120" height="42" style="position:absolute;top:725px;left:195px"></a>
+			<a href="javascript:void(0)" onclick="clickedOn(46,55)"><img id="img46" src="./imgs/pixel.png" width="120" height="42" style="position:absolute;top:781px;left:195px"></a>
+			<a href="javascript:void(0)" onclick="clickedOn(47,56)"><img id="img47" src="./imgs/pixel.png" width="120" height="42" style="position:absolute;top:837px;left:195px"></a>
+			<a href="javascript:void(0)" onclick="clickedOn(48,56)"><img id="img48" src="./imgs/pixel.png" width="120" height="42" style="position:absolute;top:893px;left:195px"></a>
+
+			<a href="javascript:void(0)" onclick="clickedOn(53,59)"><img id="img53" src="./imgs/pixel.png" width="160" height="64" style="position:absolute;top:503px;left:360px"></a>
+			<a href="javascript:void(0)" onclick="clickedOn(54,59)"><img id="img54" src="./imgs/pixel.png" width="160" height="64" style="position:absolute;top:615px;left:360px"></a>
+			<a href="javascript:void(0)" onclick="clickedOn(55,60)"><img id="img55" src="./imgs/pixel.png" width="160" height="64" style="position:absolute;top:727px;left:360px"></a>
+			<a href="javascript:void(0)" onclick="clickedOn(56,60)"><img id="img56" src="./imgs/pixel.png" width="160" height="64" style="position:absolute;top:839px;left:360px"></a>
+
+			<a href="javascript:void(0)" onclick="clickedOn(59,62)"><img id="img59" src="./imgs/pixel.png" width="200" height="80" style="position:absolute;top:541px;left:575px"></a>
+			<a href="javascript:void(0)" onclick="clickedOn(60,62)"><img id="img60" src="./imgs/pixel.png" width="200" height="80" style="position:absolute;top:765px;left:575px"></a>
+
+
+			<a href="javascript:void(0)" onclick="clickedOn(1,33)"><img id="img1" src="./imgs/1.png"  height="50" style="position:absolute;top: 55px;left:30px">
+			</a>
+			<a href="javascript:void(0)" onclick="clickedOn(2,33)"><img id="img2" src="./imgs/2.png" height="50" style="position:absolute;top: 105px;left:30px">
+			</a>
+			<a href="javascript:void(0)" onclick="clickedOn(3,34)"><img id="img3" src="./imgs/3.png"  height="50" style="position:absolute;top:165px;left:30px">
+			</a>
+			<a href="javascript:void(0)" onclick="clickedOn(4,34)"><img id="img4" src="./imgs/4.png"   height="50" style="position:absolute;top:215px;left:30px">
+			</a>
+			<a href="javascript:void(0)" onclick="clickedOn(5,35)"><img id="img5" src="./imgs/5.png"    height="50" style="position:absolute;top:275px;left:30px">
+			</a>
+			<a href="javascript:void(0)" onclick="clickedOn(6,35)"><img id="img6" src="./imgs/6.png"    height="50" style="position:absolute;top:325px;left:30px">
+			</a>
+			<a href="javascript:void(0)" onclick="clickedOn(7,36)"><img id="img7" src="./imgs/7.png"    height="50" style="position:absolute;top:385px;left:30px">
+			</a>
+			<a href="javascript:void(0)" onclick="clickedOn(8,36)"><img id="img8" src="./imgs/8.png"    height="50" style="position:absolute;top:435px;left:30px">
+
+			</a>
+			<a href="javascript:void(0)" onclick="clickedOn(9,37)"><img id="img9" src="./imgs/9.png"    height="50" style="position:absolute;top:515px;left:30px">
+			</a>
+			<a href="javascript:void(0)" onclick="clickedOn(10,37)"><img id="img10" src="./imgs/10.png"    height="50" style="position:absolute;top:565px;left:30px">
+			</a>
+			<a href="javascript:void(0)" onclick="clickedOn(11,38)"><img id="img11" src="./imgs/11.png"    height="50" style="position:absolute;top:625px;left:30px">
+			</a>
+			<a href="javascript:void(0)" onclick="clickedOn(12,38)"><img id="img12" src="./imgs/12.png"    height="50" style="position:absolute;top:675px;left:30px">
+			</a>
+			<a href="javascript:void(0)" onclick="clickedOn(13,39)"><img id="img13" src="./imgs/13.png"    height="50" style="position:absolute;top:745px;left:30px">
+			</a>
+			<a href="javascript:void(0)" onclick="clickedOn(14,39)"><img id="img14" src="./imgs/14.png"    height="50" style="position:absolute;top:785px;left:30px">
+			</a>
+			<a href="javascript:void(0)" onclick="clickedOn(15,40)"><img id="img15" src="./imgs/15.png"    height="50" style="position:absolute;top:845px;left:30px">
+			</a>
+			<a href="javascript:void(0)" onclick="clickedOn(16,40)"><img id="img16" src="./imgs/16.png"    height="50" style="position:absolute;top:895px;left:30px">
+			</a>
+
+			<a href="javascript:void(0)" onclick="clickedOn(33,49)"><img id="img33" src="./imgs/pixel.png"   height="100" style="position:absolute;top:60px;left:195px">
+			</a>
+			<a href="javascript:void(0)" onclick="clickedOn(34,49)"><img id="img34" src="./imgs/pixel.png"   height="100" style="position:absolute;top:172px;left:195px"></a>
+			<a href="javascript:void(0)" onclick="clickedOn(35,50)"><img id="img35" src="./imgs/pixel.png"   height="100" style="position:absolute;top:282px;left:195px"></a>
+			<a href="javascript:void(0)" onclick="clickedOn(36,50)"><img id="img36" src="./imgs/pixel.png"   height="100" style="position:absolute;top:392px;left:195px"></a>
+
+
+			<a href="javascript:void(0)" onclick="clickedOn(37,51)"><img id="img37" src="./imgs/pixel.png"   height="100" style="position:absolute;top:522px;left:195px"></a>
+			<a href="javascript:void(0)" onclick="clickedOn(38,51)"><img id="img38" src="./imgs/pixel.png"   height="100" style="position:absolute;top:632px;left:195px"></a>
+			<a href="javascript:void(0)" onclick="clickedOn(39,52)"><img id="img39" src="./imgs/pixel.png"   height="100" style="position:absolute;top:742px;left:195px"></a>
+			<a href="javascript:void(0)" onclick="clickedOn(40,52)"><img id="img40" src="./imgs/pixel.png"   height="100" style="position:absolute;top:852px;left:195px"></a>
+
+
+			
+
+
+			<a href="javascript:void(0)" onclick="clickedOn(49,57)"><img id="img49" src="./imgs/pixel.png"  height="110" style="position:absolute;top:95px;left:450px">
+			</a>
+			<a href="javascript:void(0)" onclick="clickedOn(50,57)"><img id="img50" src="./imgs/pixel.png"  height="110" style="position:absolute;top:320px;left:450px"></a>
+			<a href="javascript:void(0)" onclick="clickedOn(51,58)"><img id="img51" src="./imgs/pixel.png"  height="110" style="position:absolute;top:550px;left:450px"></a>
+			<a href="javascript:void(0)" onclick="clickedOn(52,58)"><img id="img52" src="./imgs/pixel.png"  height="110" style="position:absolute;top:775px;left:450px"></a>
+
+
+			
+			<a href="javascript:void(0)" onclick="clickedOn(57,61)"><img id="img57" src="./imgs/pixel.png" height="120" style="position:absolute;top:180px;left:650px"></a>
+			<a href="javascript:void(0)" onclick="clickedOn(58,61)"><img id="img58" src="./imgs/pixel.png" height="120" style="position:absolute;top:650px;left:650px"></a>
+			
+			
+			
+			
+			<img id="img61" src="./imgs/pixel.png" height="200" style="position:absolute;top:390px;left:1040px">
+			
+			
+	</div>	
+
+</body></html>
