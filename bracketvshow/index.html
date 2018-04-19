@@ -4,7 +4,10 @@
 <link rel="icon" type="image/png" href="imgs/favicon.png">
 <style type="text/css">
 	
+
 body{
+	width: 1300px;
+	height: 1000px;
 	background-color: white;
 }
 
@@ -96,14 +99,14 @@ function clickedOn(idnum,childnum) {
 function genScreenshot() {
     html2canvas(document.body, {
       onrendered: function(canvas) {
-      // $('#box1').html("");
-			// $('#box1').append(canvas);
+      $('#box1').html("");
+	  $('#box1').append(canvas);
       
       if (navigator.userAgent.indexOf("MSIE ") > 0 || 
 					navigator.userAgent.match(/Trident.*rv\:11\./)) 
 			{
       	var blob = canvas.msToBlob();
-        window.navigator.msSaveBlob(blob,'Test file.png');
+        window.navigator.msSaveBlob(blob,'bracket.png');
       }
       else {
         $('#test').attr('href', canvas.toDataURL("image/png"));
@@ -126,7 +129,7 @@ function genScreenshot() {
 <a id="test"></a>
 <div  id="text" style="top:100px;">
 <img src="./img/brackett.png"   style="position:absolute;top:59px;left:10px;">
-<img src="./img/logo.png" width="224" style="position:absolute;top:20px;left:1060px;margin-bottom:200px;">
+<img src="./img/logo.png" width="224" style="position:absolute;top:20px;left:980px;margin-bottom:200px;">
 
 			<a href="javascript:void(0)" onclick="clickedOn(1,33)"><img id="img1" src="./img/1.png" width="120" height="28" style="position:absolute;top:45px;left:30px"></a>
 <a href="javascript:void(0)" onclick="clickedOn(2,33)"><img id="img2" src="./img/2.png" width="120" height="28" style="position:absolute;top:73px;left:30px">
