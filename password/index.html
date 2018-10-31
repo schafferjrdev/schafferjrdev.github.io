@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html ng-app="helloWorld">
+<head>
+	<title>Password</title>
+	<meta charset="utf-8" lang="pt-Br">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="assets/css/style.css">
+	
+	<script type="text/javascript">
+		var app = angular.module("helloWorld", []);
+		app.controller("helloWorldCtrl", function ($scope) {
+			
+			//audio.loop();
+
+			$scope.estagio = 0;			
+			$scope.n1 = 0;			
+			$scope.n2 = 0;			
+			$scope.n3 = 0;			
+			$scope.n4 = 0;
+
+			$scope.fim=false;
+
+			$scope.leds = ['check','check','check','check'];
+			
+
+			$scope.tentativas = 9;
+
+			$scope.numerosCertos = 0;
+			$scope.numerosFora = 0;
+
+			//Senha Random
+	        $scope.pass1;
+	        $scope.pass2;
+	        $scope.pass3;
+	        $scope.pass4;
+
+	        function gerarSenha(){
+	        $scope.pass1 = Math.floor((Math.random()*10));
+	        $scope.pass2 = Math.floor((Math.random()*10));
+
+	        while($scope.pass1 == $scope.pass2){
+	            $scope.pass2 = Math.floor((Math.random()*10));
+	        }
+
+	         $scope.pass3 = Math.floor((Math.random()*10));
+
+	        while($scope.pass3 == $scope.pass2 || $scope.pass3 == $scope.pass1){
+	            $scope.pass3 = Math.floor((Math.random()*10));
+	        }
+
+	         $scope.pass4 = Math.floor((Math.random()*10));
+
+	        while($scope.pass4 == $scope.pass3 || $scope.pass4 == $scope.pass2 || $scope.pass4==$scope.pass1){
+	            $scope.pass4= Math.floor((Math.random()*10));
+	        }
+
+	        //console.log("Senha "+$scope.pass1+" "+$scope.pass2+" "+$scope.pass3+" "+$scope.pass4);
+	       }
+	       gerarSenha(); 
+
+	       function resetar() {
+	       		gerarSenha();
+	       		
+        				
+				$scope.n1 = 0;			
+				$scope.n2 = 0;			
+				$scope.n3 = 0;			
+				$scope.n4 = 0;
+
+				$scope.fim=false;
+
+				$scope.leds = ['check','check','check','check'];
+				
+
+				$scope.tentativas = 9;
+
+				$scope.numerosCertos = 0;
+				$scope.numerosFora = 0;
+	       }
+
+
+			$scope.passarFase = function (n){
+				
+
+				$scope.estagio = n;
+				if(n ==1){
+					resetar();
+				}
+
+				if(n!=0){
+					var click = new Audio('./assets/images/menubtn.wav');
+					click.play();
+				}else{
+					var flick = new Audio('./assets/images/flick.wav');
+					flick.play();
+				}					
+				
+			};
+		
+
+			$scope.soundOver = function (){
+				var over = new Audio('./assets/images/hover.wav');
+				over.play();
+			};
+
+
+			
+			$scope.aumentarNum1 = function (n){
+				
+
+				if(!$scope.fim){
+					var seta = new Audio('./assets/images/click.mp3');
+					seta.play();
+					switch(n){
+						case 1:
+
+						$scope.n1++;
+
+						if($scope.n1 >= 10){
+							$scope.n1 = 0;
+						}
+						break;
+
+						case 2:
+						$scope.n2++;
+
+						if($scope.n2 >= 10){
+							$scope.n2 = 0;
+						}
+						break;
+
+						case 3:
+						$scope.n3++;
+
+						if($scope.n3 >= 10){
+							$scope.n3 = 0;
+						}
+						break;
+
+						case 4:
+						$scope.n4++;
+
+						if($scope.n4 >= 10){
+							$scope.n4 = 0;
+						}
+						break;
+
+					}
+				}
+
+			};
+
+			$scope.diminuiNum1 = function (n){
+				
+				if(!$scope.fim){
+					var seta = new Audio('./assets/images/click.mp3');
+					seta.play();
+					switch(n){
+						case 1:
+						$scope.n1--;
+						if($scope.n1 < 0){
+							$scope.n1 = 9;
+						}
+						break;
+
+						case 2:
+						$scope.n2--;
+						if($scope.n2 < 0){
+							$scope.n2 = 9;
+						}
+						break;
+
+						case 3:
+						$scope.n3--;
+						if($scope.n3 < 0){
+							$scope.n3 = 9;
+						}
+						break;
+
+						case 4:
+						$scope.n4--;
+						if($scope.n4 < 0){
+							$scope.n4 = 9;
+						}
+						break;
+
+					}
+				}
+
+				
+			};
+
+			$scope.verificar = function (){
+
+						$scope.numerosCertos = 0;
+						$scope.numerosFora = 0;
+						$scope.senha = [$scope.pass1,$scope.pass2,$scope.pass3,$scope.pass4];
+
+						if($scope.senha.includes($scope.n1)){
+							if($scope.n1 == $scope.senha[0]){
+								$scope.numerosCertos++;
+								//console.log("certo 1")
+							}else{
+								$scope.numerosFora++;
+								//console.log("fora 1")
+							}
+							
+						}
+
+						if($scope.senha.includes($scope.n2)){
+							if($scope.n2 == $scope.senha[1]){
+								$scope.numerosCertos++;
+								//console.log("certo 2")
+							}else{
+								$scope.numerosFora++;
+								//console.log("fora 2")
+							}
+							
+						}
+
+						if($scope.senha.includes($scope.n3)){
+							if($scope.n3 == $scope.senha[2]){
+								$scope.numerosCertos++;
+								//console.log("certo 3")
+							}else{
+								$scope.numerosFora++;
+								//console.log("fora 3")
+							}
+							
+						}
+
+
+						if($scope.senha.includes($scope.n4)){
+							if($scope.n4 == $scope.senha[3]){
+								$scope.numerosCertos++;
+								//console.log("certo 4")
+							}else{
+								$scope.numerosFora++;
+								//console.log("fora 4")
+							}
+							
+						}
+
+
+				if(!$scope.fim){
+					//console.log($scope.tentativas);
+					if($scope.tentativas >1){
+						var enter = new Audio('./assets/images/enter.wav');
+						enter.play();
+						
+
+						
+
+
+						if($scope.numerosCertos == 0 && $scope.numerosFora == 0 ){
+							//console.log("Não tem certo");
+							for(var i=0; i < 4; i++){
+								$scope.leds[i] = 'check'
+							}						
+							
+						}else{
+							
+							for(var i=0; i < $scope.numerosCertos; i++){
+								$scope.leds[i] = 'correto'
+							}
+
+							for(var i=$scope.numerosCertos; i < $scope.numerosCertos+$scope.numerosFora; i++){
+								$scope.leds[i] = 'ok'
+							}
+
+							for(var i=$scope.numerosCertos+$scope.numerosFora; i < 4; i++){
+								$scope.leds[i] = 'check'
+							}
+							
+						}
+
+						if($scope.numerosCertos == 4){
+							var win = new Audio('./assets/images/win.wav');
+							win.play();
+							$scope.fim=true;
+							$scope.n1 = $scope.n1+'(correto)';
+							$scope.n2 = $scope.n2+'(correto)';
+							$scope.n3 = $scope.n3+'(correto)';
+							$scope.n4 = $scope.n4+'(correto)';
+						}
+
+
+						$scope.tentativas--;
+
+					}else if($scope.tentativas == 1 && $scope.numerosCertos < 4){
+						var fail = new Audio('./assets/images/fail.mp3');
+						fail.play();
+						
+						$scope.estagio = 2;
+					}else{
+						var win = new Audio('./assets/images/win.wav');
+						win.play();
+						$scope.fim=true;
+						for(var i=0; i < 4; i++){
+								$scope.leds[i] = 'correto'
+						}
+						$scope.n1 = $scope.n1+'(correto)';
+						$scope.n2 = $scope.n2+'(correto)';
+						$scope.n3 = $scope.n3+'(correto)';
+						$scope.n4 = $scope.n4+'(correto)';
+						
+					}
+				}
+			};
+			
+		});
+
+		
+
+	</script>
+</head>
+<body>
+	<audio src="./assets/images/sound.mp3" autoplay="" loop=""></audio>
+	<div ng-controller="helloWorldCtrl" class="jumbotron">
+
+		<div class="menu" ng-show="estagio == 0">
+		<button class="btn btn-info btn-play" ng-mouseover="soundOver()" ng-click="passarFase(1)">Jogar</button>
+		<button class="btn btn-info btn-play regras" ng-mouseover="soundOver()" ng-click="passarFase(3)">Regras</button>
+		</div>
+
+		<div class="game" ng-show="estagio == 1">
+			<button class="btn btn-secondary btn-play btn-telaJogo" ng-click="passarFase(0)">Voltar</button>
+
+			<img id="led1" class="fixar" ng-src="./assets/images/{{leds[0]}}.png">
+			<img id="led2" class="fixar" ng-src="./assets/images/{{leds[1]}}.png">
+			<img id="led3" class="fixar" ng-src="./assets/images/{{leds[2]}}.png">
+			<img id="led4" class="fixar" ng-src="./assets/images/{{leds[3]}}.png">
+
+			<div class="btnsUp fixar">
+				<button class="btn btn-info setas" ng-click="aumentarNum1(1)">&#x2B06;&#xFE0F;</button>
+				<button class="btn btn-info setas" ng-click="aumentarNum1(2)">&#x2B06;&#xFE0F;</button>
+				<button class="btn btn-info setas" ng-click="aumentarNum1(3)">&#x2B06;&#xFE0F;</button>
+				<button class="btn btn-info setas" ng-click="aumentarNum1(4)">&#x2B06;&#xFE0F;</button>
+			</div>
+
+			<div class="btnsDown fixar"> 
+				<button class="btn btn-info setas" ng-click="diminuiNum1(1)">&#x2B07;&#xFE0F;</button>
+				<button class="btn btn-info setas" ng-click="diminuiNum1(2)">&#x2B07;&#xFE0F;</button>
+				<button class="btn btn-info setas" ng-click="diminuiNum1(3)">&#x2B07;&#xFE0F;</button>
+				<button class="btn btn-info setas" ng-click="diminuiNum1(4)">&#x2B07;&#xFE0F;</button>
+			</div>	
+
+			<button class="btn btn-danger enter fixar" ng-mouseover="soundOver()" ng-click="verificar()">ENTER</button>
+			
+
+			<div class="numeros fixar">
+			<img ng-src="./assets/images/{{n1}}.png" class="number">
+			<img ng-src="./assets/images/{{n2}}.png" class="number">
+			<img ng-src="./assets/images/{{n3}}.png" class="number">
+			<img ng-src="./assets/images/{{n4}}.png" class="number">
+			</div>
+
+			<img ng-src="./assets/images/{{tentativas}}.png" class="number tentativa fixar">
+
+		</div>
+
+		<div class="derrota" ng-show="estagio == 2">
+			<div class="numerosEnd fixar">
+			<img ng-src="./assets/images/{{pass1}}.png" class="number">
+			<img ng-src="./assets/images/{{pass2}}.png" class="number">
+			<img ng-src="./assets/images/{{pass3}}.png" class="number">
+			<img ng-src="./assets/images/{{pass4}}.png" class="number">
+			</div>
+			<button class="btn btn-secondary btn-play  voltar btn-telaRegras" ng-mouseover="soundOver()" ng-click="passarFase(0)">Voltar</button>
+			<button class="btn btn-info btn-play  regras btn-menu" ng-mouseover="soundOver()" ng-click="passarFase(1)">Recomeçar</button>
+
+			
+		</div>
+
+
+		<div class="telaRegras" ng-show="estagio == 3">
+		<button class="btn btn-secondary btn-play btn-telaRegras voltar" ng-mouseover="soundOver()" ng-click="passarFase(0)">Voltar</button>
+		<button class="btn btn-info btn-play btn-telaRegras btn-jogarRegras" ng-mouseover="soundOver()" ng-click="passarFase(1)">Jogar</button>
+		</div>
+
+
+	</div>
+
+
+</body>
+</html>

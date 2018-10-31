@@ -1,0 +1,191 @@
+body{
+
+	background-color: #e6e3c2;
+	overflow: none;
+
+}
+
+.jumbotron{
+	width: 640px;
+	height: 725px;
+	margin: auto;
+	text-align: center;
+	background-color: #e6e3c2;
+}
+
+.btn:hover{
+	transform: scale(1.1);
+}
+
+.menu{
+	width: 640px;
+	height: 725px;
+	margin: auto;
+	text-align: center;
+	background-image: url("../images/inicio.png");
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-color: #e6e3c2;
+}
+
+.game{
+	width: 640px;
+	height: 725px;
+	margin: auto;
+	text-align: center;
+	background-image: url("../images/bgSenha.png");
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-color: #e6e3c2;
+	position: relative;
+}
+
+.derrota{
+	width: 640px;
+	height: 725px;
+	margin: auto;
+	text-align: center;
+	background-image: url("../images/perdeu.png");
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-color: #e6e3c2;
+	position: relative;
+}
+
+.telaRegras{
+	width: 640px;
+	height: 725px;
+	margin: auto;
+	text-align: center;
+	background-image: url("../images/instru.png");
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-color: #e6e3c2;
+	position: relative;
+}
+
+.form-control{
+	margin-bottom: 5px;
+}
+
+.btn-play{
+
+	position: relative;
+	margin-top: 275px;
+	font-size: 30pt;
+	font-family: "Courier New", Courier, monospace;
+}
+.btn-telaRegras{
+
+	position: relative;
+	margin-top: 350px;
+	font-size: 15pt;
+	font-family: "Courier New", Courier, monospace;
+}
+
+.btn-jogarRegras{
+
+	position: relative;
+	margin-top: 350px;
+	font-size: 25pt;
+	font-family: "Courier New", Courier, monospace;
+}
+.btn-telaJogo{
+
+	position: absolute;
+	bottom: 720px;
+	left: 10px;
+	font-size: 15pt;
+	font-family: "Courier New", Courier, monospace;
+}
+
+.regras{
+	margin-left: 15px;
+}
+ .voltar{
+ 	position: absolute;
+	bottom: 720px;
+	left: 10px;
+ }
+
+#led1{
+
+	float: right;
+	top: 139px;
+	right: 87px;
+}
+
+#led2{
+	
+	float: right;
+	top: 139px;
+	right: 32px;
+}
+
+#led3{
+	
+	float: right;
+	top: 199px;
+	right: 87px;
+}
+
+#led4{
+	
+	float: right;
+	top: 199px;
+	right: 32px;
+}
+
+.fixar{
+	position: absolute;
+}
+
+.setas{
+	width: 45px;
+	height: 45px;
+
+	text-align: center;
+	font-size: 20pt;
+	margin-left: 25px;
+
+}
+
+
+.enter{
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+	font-size: 20pt;
+	top: 330px;
+	right: 250px;
+
+
+}
+
+.numeros{
+	top:120px;
+	right: 210px;
+}
+
+.numerosEnd{
+	top:160px;
+	right: 190px;
+}
+
+.tentativa{
+	top:330px;
+	right: 60px;
+
+}
+
+.btnsUp{
+
+	top:70px;
+	right: 220px;
+
+}
+
+.btnsDown{
+	top:220px;
+	right: 220px;
+
+}
