@@ -18,20 +18,50 @@
 
 			$scope.idioma = 0;
 
+
+
+
+
+
+
+
+
 			$scope.translate = [
 			{
 				btnJogar: 'Jogar',
 				btnVerificar: 'ENTER',
 				btnBack: 'Voltar',
 				btnRestart: 'Recomeçar',
-				btnRegras: 'Regras'
+				btnRegras: 'Regras',
+				labelCorreto: 'Correto',
+				labelFora: 'Fora de posição',
+				labelVerificar: 'Verificar',
+				labelTentativas: 'Tentativas',
+				textoDerrota: 'VOCÊ PERDEU! A SENHA ERA:',
+				textoAtencao:'Atenção! Os círculos não estão associados com a ordem da senha!',
+				textoRegra1:'NÃO existem números repetidos;',
+				textoRegra2:'Os círculos indicam a quantidade de números certos na senha;',
+				textoRegra3:'Você tem 9 tentativas para acertar a senha.',
+				textoDicaOk:'Para cada círculo amarelo indica que existe 1 número da senha na posição errada',
+				textoDicaCorreto:'Para cada círculo verde indica que existe 1 número da senha na posição certa'
 			},
 			{
 				btnJogar: 'Play',
 				btnVerificar: 'ENTER',
 				btnBack: 'Back',
 				btnRestart: 'Restart',
-				btnRegras: 'Rules'
+				btnRegras: 'Rules',
+				labelCorreto: 'Correct',
+				labelFora: 'Out of position',
+				labelVerificar: '    Check',
+				labelTentativas: 'Attempts',
+				textoDerrota: 'YOU LOSE! THE PASSWORD WAS:',
+				textoAtencao: 'Attention! The circles are not associated with the password order!',
+				textoRegra1: 'There are NO repeated numbers;',
+				textoRegra2: 'The circles indicate the amount of certain numbers in the password;',
+				textoRegra3: 'You have 9 attempts to set the password.',
+				textoDicaOk: 'For each yellow circle indicates that there is 1 password number in the wrong position',
+				textoDicaCorreto: 'For each green circle indicates that there is 1 password number in the right position'
 
 			}
 			];
@@ -107,8 +137,8 @@
 
 
 			$scope.trocarIdioma = function (n){
-				var flick = new Audio('./assets/images/flick.wav');
-				flick.play();
+				var click = new Audio('./assets/images/click.mp3');
+				click.play();
 				
 				$scope.idioma = n;
 				
@@ -184,6 +214,46 @@
 				}
 
 			};
+
+			$scope.toasty = false;
+
+
+			
+			var s = "";
+			$scope.easterEgg = function (k){
+				s=s+k;
+				if(s.length > 4){
+					s=""+k;
+					
+				}
+
+				if(s == "boon"){
+					$scope.toasty = true;
+					var toasty = new Audio('./assets/images/toasty.mp3');
+					toasty.play();
+				}else if(s == "noob"){
+					$scope.n1 = $scope.pass1;
+					$scope.n2 = $scope.pass2;
+					$scope.n3 = $scope.pass3;
+					$scope.n4 = $scope.pass4;
+				}
+				
+
+				var flick = new Audio('./assets/images/flick.wav');
+				flick.play();
+			}
+			
+
+
+			let count = 0;
+			$scope.endToasty = function (){
+				count++;
+				if(count>10){
+					$scope.toasty = false;
+					count = 0;
+				}
+			}
+
 
 			$scope.diminuiNum1 = function (n){
 				
@@ -350,21 +420,31 @@
 	</script>
 </head>
 <body>
-	<audio src="./assets/images/sound.mp3" autoplay="" loop=""></audio>
-	<div ng-controller="helloWorldCtrl" class="jumbotron">
+	<!-- <audio src="./assets/images/sound.mp3" autoplay="" loop=""></audio> -->
+		
 
-		<div class="languages fixar">
-		<button _ngcontent-c0="" ng-mouseover="soundOver()" ng-click="trocarIdioma(1)"  class="btn lang-btn" style="background-image: url('http://ldse.ufc.br/dj/assets/img/en-EUA.png');"></button>
-		<button _ngcontent-c0="" ng-mouseover="soundOver()" ng-click="trocarIdioma(0)" class="btn lang-btn" style="background-image: url('http://ldse.ufc.br/dj/assets/img/pt-BR.png');"></button>
+	<div  ng-mousemove="endToasty()" ng-controller="helloWorldCtrl" class="jumbotron">
+		
+
+
+		<div class="languages fixar" >
+
+		<button ng-mouseover="soundOver()" ng-click="trocarIdioma(1)"  class="btn lang-btn {{idioma == 1 ? 'sizeUp' : 'none' }}"  style="background-image: url('http://ldse.ufc.br/dj/assets/img/en-EUA.png');"  ></button>
+		<button ng-mouseover="soundOver()" ng-click="trocarIdioma(0)" class="btn lang-btn {{idioma == 0 ? 'sizeUp' : 'none' }}" style="background-image: url('http://ldse.ufc.br/dj/assets/img/pt-BR.png');"></button>
 		</div>
 
 		<div class="menu" ng-show="estagio == 0">
-		<button class="btn btn-info btn-play" ng-mouseover="soundOver()" ng-click="passarFase(1)">{{translate[idioma].btnJogar}}</button>
-		<button class="btn btn-info btn-play regras" ng-mouseover="soundOver()" ng-click="passarFase(3)">{{translate[idioma].btnRegras}}</button>
+		<button class="btn btn-info btn-play btn-telaMenu" ng-mouseover="soundOver()" ng-click="passarFase(1)">{{translate[idioma].btnJogar}}</button>
+		<button class="btn btn-info btn-play regras btn-telaMenu" ng-mouseover="soundOver()" ng-click="passarFase(3)">{{translate[idioma].btnRegras}}</button>
 		</div>
 
 		<div class="game" ng-show="estagio == 1">
-			<button class="btn btn-secondary btn-play btn-telaJogo" ng-click="passarFase(0)">{{translate[idioma].btnBack}}</button>
+			<button class="btn btn-secondary voltar btn-play btn-telaJogo" ng-mouseover="soundOver()" ng-click="passarFase(0)">{{translate[idioma].btnBack}}</button>
+
+			<label class="fixar font label_correto">{{translate[idioma].labelCorreto}}</label>
+			<label class="fixar font label_fora">{{translate[idioma].labelFora}}</label>
+			<label class="fixar font label_verificar">{{translate[idioma].labelVerificar}}</label>
+			<label class="fixar font label_tentativas">{{translate[idioma].labelTentativas}}:</label>
 
 			<img id="led1" class="fixar" ng-src="./assets/images/{{leds[0]}}.png">
 			<img id="led2" class="fixar" ng-src="./assets/images/{{leds[1]}}.png">
@@ -385,8 +465,8 @@
 				<button class="btn btn-info setas" ng-click="diminuiNum1(4)">&darr;</button>
 			</div>	
 
-			<button class="btn btn-danger enter fixar" ng-mouseover="soundOver()" ng-click="verificar()">ENTER</button>
-			
+			<button class="btn btn-danger enter fixar" ng-show="fim==false" ng-mouseover="soundOver()" ng-click="verificar()">ENTER</button>
+			<button class="btn btn-success reenter fixar fixSize" ng-show="fim==true" ng-mouseover="soundOver()" ng-click="passarFase(1)">{{translate[idioma].btnRestart}}</button>
 
 			<div class="numeros fixar">
 			<img ng-src="./assets/images/{{n1}}.png" class="number">
@@ -400,6 +480,8 @@
 		</div>
 
 		<div class="derrota" ng-show="estagio == 2">
+			<label class="fixar font label_derrota">{{translate[idioma].textoDerrota}}</label>
+
 			<div class="numerosEnd fixar">
 			<img ng-src="./assets/images/{{pass1}}.png" class="number">
 			<img ng-src="./assets/images/{{pass2}}.png" class="number">
@@ -407,19 +489,37 @@
 			<img ng-src="./assets/images/{{pass4}}.png" class="number">
 			</div>
 			<button class="btn btn-secondary btn-play  voltar btn-telaRegras" ng-mouseover="soundOver()" ng-click="passarFase(0)">{{translate[idioma].btnBack}}</button>
-			<button class="btn btn-info btn-play  regras btn-menu" ng-mouseover="soundOver()" ng-click="passarFase(1)">{{translate[idioma].btnRestart}}</button>
+			<button class="btn btn-info btn-play  regras btn-menu fixSizePlus" ng-mouseover="soundOver()" ng-click="passarFase(1)">{{translate[idioma].btnRestart}}</button>
 
 			
 		</div>
 
 
 		<div class="telaRegras" ng-show="estagio == 3">
-		<p class="atencao fixar btn-danger">Atenção! Os círculos não estão associados com a ordem da senha!</p>
-		<button class="btn btn-secondary btn-play btn-telaRegras voltar" ng-mouseover="soundOver()" ng-click="passarFase(0)">{{translate[idioma].btnBack}}</button>
-		<button class="btn btn-info btn-play btn-telaRegras btn-jogarRegras" ng-mouseover="soundOver()" ng-click="passarFase(1)">{{translate[idioma].btnJogar}}</button>
+
+		<p class="atencao fixar bg-danger">{{translate[idioma].textoAtencao}}</p>
+		<p class="regra1 fixar ">{{translate[idioma].textoRegra1}}</p>
+		<p class="regra2 fixar ">{{translate[idioma].textoRegra2}}</p>
+		<p class="regra3 fixar ">{{translate[idioma].textoRegra3}}</p>
+		
+		<div class="ledsExemplo fixar">
+			<img id="ledOk" class="fixar" ng-src="./assets/images/ok.png">
+			<p class="dicaOk fixar ">{{translate[idioma].textoDicaOk}}</p>
+			
+			<img id="ledCorreto" class="fixar" ng-src="./assets/images/correto.png">
+			<p class="dicaCorreto fixar ">{{translate[idioma].textoDicaCorreto}}</p>
+			
 		</div>
 
+		<button class="btn btn-secondary btn-play btn-telaRegras voltar" ng-mouseover="soundOver()" ng-click="passarFase(0)">{{translate[idioma].btnBack}}</button>
+		<button class="btn btn-info btn-play btn-telaRegras btn-jogarRegras fixSize" ng-mouseover="soundOver()" ng-click="passarFase(1)">{{translate[idioma].btnJogar}}</button>
+		</div>
 
+		<button class="easterEgg1 fixar" ng-click="easterEgg('o')" ng-mouseover="soundOver()"></button>
+		<button class="easterEgg2 fixar" ng-click="easterEgg('o')" ng-mouseover="soundOver()"></button>
+		<button class="easterEgg3 fixar" ng-click="easterEgg('n')" ng-mouseover="soundOver()"></button>
+		<button class="easterEgg4 fixar" ng-click="easterEgg('b')" ng-mouseover="soundOver()"></button>
+		<img ng-src="./assets/images/toasty.png" ng-if="toasty" class="fixar toasty">
 	</div>
 
 
