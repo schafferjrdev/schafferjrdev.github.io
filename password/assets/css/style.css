@@ -191,11 +191,33 @@ body{
 }
 
 .atencao{
-	
+
 	font-family: "Courier New", Courier, monospace;
 	font-weight: bold;
 	font-size: 10pt;
 	top: 300px;
 	right: 50px;
 	width: 200px;
+}
+
+.lang-btn{
+	background-color: transparent;
+	border: 10;
+	outline: none;
+	margin: -5px 10px 0 10px;
+	background-repeat: no-repeat;
+	background-size: 30px 30px;
+	height: 30px;
+	width: 30px;
+
+}
+
+.languages{
+	top:	50px;
+	right: 50px;
+}
+
+
+.sizeUp{
+	transform: scale(1.3);
 }

@@ -15,8 +15,29 @@
 	<script type="text/javascript">
 		var app = angular.module("helloWorld", []);
 		app.controller("helloWorldCtrl", function ($scope) {
+
+			$scope.idioma = 0;
+
+			$scope.translate = [
+			{
+				btnJogar: 'Jogar',
+				btnVerificar: 'ENTER',
+				btnBack: 'Voltar',
+				btnRestart: 'Recomeçar',
+				btnRegras: 'Regras'
+			},
+			{
+				btnJogar: 'Play',
+				btnVerificar: 'ENTER',
+				btnBack: 'Back',
+				btnRestart: 'Restart',
+				btnRegras: 'Rules'
+
+			}
+			];
+
 			
-			//audio.loop();
+			
 
 			$scope.estagio = 0;			
 			$scope.n1 = 0;			
@@ -84,6 +105,14 @@
 				$scope.numerosFora = 0;
 	       }
 
+
+			$scope.trocarIdioma = function (n){
+				var flick = new Audio('./assets/images/flick.wav');
+				flick.play();
+				
+				$scope.idioma = n;
+				
+			};
 
 			$scope.passarFase = function (n){
 				
@@ -324,13 +353,18 @@
 	<audio src="./assets/images/sound.mp3" autoplay="" loop=""></audio>
 	<div ng-controller="helloWorldCtrl" class="jumbotron">
 
+		<div class="languages fixar">
+		<button _ngcontent-c0="" ng-mouseover="soundOver()" ng-click="trocarIdioma(1)"  class="btn lang-btn" style="background-image: url('http://ldse.ufc.br/dj/assets/img/en-EUA.png');"></button>
+		<button _ngcontent-c0="" ng-mouseover="soundOver()" ng-click="trocarIdioma(0)" class="btn lang-btn" style="background-image: url('http://ldse.ufc.br/dj/assets/img/pt-BR.png');"></button>
+		</div>
+
 		<div class="menu" ng-show="estagio == 0">
-		<button class="btn btn-info btn-play" ng-mouseover="soundOver()" ng-click="passarFase(1)">Jogar</button>
-		<button class="btn btn-info btn-play regras" ng-mouseover="soundOver()" ng-click="passarFase(3)">Regras</button>
+		<button class="btn btn-info btn-play" ng-mouseover="soundOver()" ng-click="passarFase(1)">{{translate[idioma].btnJogar}}</button>
+		<button class="btn btn-info btn-play regras" ng-mouseover="soundOver()" ng-click="passarFase(3)">{{translate[idioma].btnRegras}}</button>
 		</div>
 
 		<div class="game" ng-show="estagio == 1">
-			<button class="btn btn-secondary btn-play btn-telaJogo" ng-click="passarFase(0)">Voltar</button>
+			<button class="btn btn-secondary btn-play btn-telaJogo" ng-click="passarFase(0)">{{translate[idioma].btnBack}}</button>
 
 			<img id="led1" class="fixar" ng-src="./assets/images/{{leds[0]}}.png">
 			<img id="led2" class="fixar" ng-src="./assets/images/{{leds[1]}}.png">
@@ -372,8 +406,8 @@
 			<img ng-src="./assets/images/{{pass3}}.png" class="number">
 			<img ng-src="./assets/images/{{pass4}}.png" class="number">
 			</div>
-			<button class="btn btn-secondary btn-play  voltar btn-telaRegras" ng-mouseover="soundOver()" ng-click="passarFase(0)">Voltar</button>
-			<button class="btn btn-info btn-play  regras btn-menu" ng-mouseover="soundOver()" ng-click="passarFase(1)">Recomeçar</button>
+			<button class="btn btn-secondary btn-play  voltar btn-telaRegras" ng-mouseover="soundOver()" ng-click="passarFase(0)">{{translate[idioma].btnBack}}</button>
+			<button class="btn btn-info btn-play  regras btn-menu" ng-mouseover="soundOver()" ng-click="passarFase(1)">{{translate[idioma].btnRestart}}</button>
 
 			
 		</div>
@@ -381,8 +415,8 @@
 
 		<div class="telaRegras" ng-show="estagio == 3">
 		<p class="atencao fixar btn-danger">Atenção! Os círculos não estão associados com a ordem da senha!</p>
-		<button class="btn btn-secondary btn-play btn-telaRegras voltar" ng-mouseover="soundOver()" ng-click="passarFase(0)">Voltar</button>
-		<button class="btn btn-info btn-play btn-telaRegras btn-jogarRegras" ng-mouseover="soundOver()" ng-click="passarFase(1)">Jogar</button>
+		<button class="btn btn-secondary btn-play btn-telaRegras voltar" ng-mouseover="soundOver()" ng-click="passarFase(0)">{{translate[idioma].btnBack}}</button>
+		<button class="btn btn-info btn-play btn-telaRegras btn-jogarRegras" ng-mouseover="soundOver()" ng-click="passarFase(1)">{{translate[idioma].btnJogar}}</button>
 		</div>
 
 
