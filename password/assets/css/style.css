@@ -28,6 +28,15 @@ body{
 	background-color: #e6e3c2;
 }
 
+.pc{
+	position: relative;
+	width: 640px;
+	height: 200px;
+	top: 550px;
+	text-align: center;
+	background-color: transparent;
+}
+
 .game{
 	width: 640px;
 	height: 725px;
@@ -164,7 +173,7 @@ body{
 
 	text-align: center;
 	font-size: 20pt;
-	margin-left: 25px;
+	margin-left: 23px;
 
 }
 
@@ -189,7 +198,7 @@ body{
 
 .numeros{
 	top:120px;
-	right: 210px;
+	right: 208px;
 }
 
 .numerosEnd{
@@ -217,7 +226,6 @@ body{
 }
 
 
-
 .font{
 	font-family: "Courier New", Courier, monospace;
 	font-weight: bold;
@@ -236,7 +244,7 @@ body{
 }
 
 .languages{
-	top:	50px;
+	top: 50px;
 	right: 50px;
 }
 
@@ -256,8 +264,8 @@ body{
 	/*background-color: #cdb57d;*/
 	background-color: transparent;
 	content: none;
-	top:588px;
-	left:507px;
+	top: 37px;
+	left: 42px;
 	cursor: pointer;
 	border:none;
 }
@@ -268,8 +276,8 @@ body{
 	/*background-color: #cdb57d;*/
 	background-color: transparent;
 	content: none;
-	top:588px;
-	left:442px;
+	top: 37px;
+	left: 107px;
 	cursor: pointer;
 	border:none;
 }
@@ -280,8 +288,8 @@ body{
 	/*background-color: #cdb57d;*/
 	background-color: transparent;
 	content: none;
-	top:628px;
-	right: 404px;
+	top: 78px;
+	right: 67px;
 	cursor: pointer;
 	border:none;
 }
@@ -292,8 +300,8 @@ body{
 	/*background-color: #cdb57d;*/
 	background-color: transparent;
 	content: none;
-	top:706px;
-	right: 404px;
+	top: 156px;
+	right: 67px;
 	cursor: pointer;
 	border:none;
 }
@@ -415,6 +423,6 @@ body{
 
 .toasty{
 	height: 200px;
-	top: 324px;
-	right: 370px;
+	top: -226px;
+	right: 38px;
 }
