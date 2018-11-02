@@ -1,7 +1,7 @@
 var app = angular.module("password", []);
-		app.controller("passwordCtrl", function ($scope,$timeout) {
+		app.controller("passwordCtrl", function ($scope) {
 
-			let timeout;
+			//let timeout;
 			
 
 			$scope.idioma = 0;
@@ -214,11 +214,12 @@ var app = angular.module("password", []);
 					$scope.toasty = true;
 					var toasty = new Audio('./assets/images/toasty.mp3');
 					toasty.play();
-					timeout = $timeout(function(){
-						//EasterEgg
-						console.log($scope.translate[$scope.idioma].textoEasterEgg);
-						$scope.toasty = false;
-						},300);
+					// timeout = $timeout(function(){
+					// 	//EasterEgg
+					// 	console.log($scope.translate[$scope.idioma].textoEasterEgg);
+					// 	$scope.toasty = false;
+					// 	},300);
+					
 				}else if(s == "nOob"){
 					$scope.n1 = $scope.pass1;
 					$scope.n2 = $scope.pass2;
