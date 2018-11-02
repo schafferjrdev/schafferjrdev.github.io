@@ -1,5 +1,8 @@
 var app = angular.module("password", []);
-		app.controller("passwordCtrl", function ($scope) {
+		app.controller("passwordCtrl", function ($scope,$timeout) {
+
+			let timeout;
+			
 
 			$scope.idioma = 0;
 
@@ -20,7 +23,8 @@ var app = angular.module("password", []);
 				textoRegra2:'Os círculos indicam a quantidade de números certos na senha;',
 				textoRegra3:'Você tem 9 tentativas para acertar a senha.',
 				textoDicaOk:'Para cada círculo amarelo indica que existe 1 número da senha na posição errada',
-				textoDicaCorreto:'Para cada círculo verde indica que existe 1 número da senha na posição certa'
+				textoDicaCorreto:'Para cada círculo verde indica que existe 1 número da senha na posição certa',
+				textoEasterEgg:'Você encontrou um easter egg! Tente agora fazer ao contrário!'
 			},
 			{
 				btnJogar: 'Play',
@@ -38,7 +42,8 @@ var app = angular.module("password", []);
 				textoRegra2: 'The circles indicate the amount of certain numbers in the password;',
 				textoRegra3: 'You have 9 attempts to set the password.',
 				textoDicaOk: 'For each yellow circle indicates that there is 1 password number in the wrong position',
-				textoDicaCorreto: 'For each green circle indicates that there is 1 password number in the right position'
+				textoDicaCorreto: 'For each green circle indicates that there is 1 password number in the right position',
+				textoEasterEgg:'You found an easter egg! Try to do it backwards now!'
 
 			}
 			];
@@ -209,6 +214,11 @@ var app = angular.module("password", []);
 					$scope.toasty = true;
 					var toasty = new Audio('./assets/images/toasty.mp3');
 					toasty.play();
+					timeout = $timeout(function(){
+						//EasterEgg
+						console.log($scope.translate[$scope.idioma].textoEasterEgg);
+						$scope.toasty = false;
+						},300);
 				}else if(s == "nOob"){
 					$scope.n1 = $scope.pass1;
 					$scope.n2 = $scope.pass2;
@@ -221,17 +231,6 @@ var app = angular.module("password", []);
 				flick.play();
 			}
 			
-
-
-			let count = 0;
-			$scope.endToasty = function (){
-				count++;
-				if(count>10){
-					$scope.toasty = false;
-					count = 0;
-				}
-			}
-
 
 			$scope.diminuiNum1 = function (n){
 				
