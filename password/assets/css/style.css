@@ -1,0 +1,428 @@
+body{
+
+	background-color: #e6e3c2;
+	overflow: none;
+
+}
+
+.jumbotron{
+	width: 640px;
+	height: 725px;
+	margin: auto;
+	text-align: center;
+	background-color: #e6e3c2;
+}
+
+.btn:hover{
+	transform: scale(1.1);
+}
+
+.menu{
+	width: 640px;
+	height: 725px;
+	margin: auto;
+	text-align: center;
+	background-image: url("../images/inicio.png");
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-color: #e6e3c2;
+}
+
+.pc{
+	position: relative;
+	width: 640px;
+	height: 200px;
+	top: 550px;
+	text-align: center;
+	background-color: transparent;
+}
+
+.game{
+	width: 640px;
+	height: 725px;
+	margin: auto;
+	text-align: center;
+	background-image: url("../images/bg_game.png");
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-color: #e6e3c2;
+	position: relative;
+}
+
+.derrota{
+	width: 640px;
+	height: 725px;
+	margin: auto;
+	text-align: center;
+	background-image: url("../images/rules.png");
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-color: #e6e3c2;
+	position: relative;
+}
+
+.telaRegras{
+	width: 640px;
+	height: 725px;
+	margin: auto;
+	text-align: center;
+	background-image: url("../images/rules.png");
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-color: #e6e3c2;
+	position: relative;
+}
+
+.form-control{
+	margin-bottom: 5px;
+}
+
+.btn-play{
+
+	position: relative;
+	margin-top: 275px;
+	font-size: 30pt;
+	font-family: "Courier New", Courier, monospace;
+}
+
+.btn-telaMenu{
+	width: 180px;
+}
+
+
+
+.btn-telaRegras{
+
+	position: relative;
+	margin-top: 350px;
+	font-size: 15pt;
+	font-family: "Courier New", Courier, monospace;
+}
+
+.btn-jogarRegras{
+
+	position: relative;
+	margin-top: 395px;
+	font-size: 15pt;
+	font-family: "Courier New", Courier, monospace;
+}
+.btn-telaJogo{
+
+	position: absolute;
+	bottom: 720px;
+	left: 10px;
+	font-size: 15pt;
+	font-family: "Courier New", Courier, monospace;
+}
+
+.regras{
+	margin-left: 15px;
+
+}
+
+.fixSize{
+	width: 190px;
+}
+
+.fixSizePlus{
+	width: 240px;
+}
+
+ .voltar{
+ 	width: 150px;
+ 	position: absolute;
+	bottom: 720px;
+	left: 10px;
+ }
+
+#led1{
+
+	float: right;
+	top: 139px;
+	right: 87px;
+}
+
+#led2{
+	
+	float: right;
+	top: 139px;
+	right: 32px;
+}
+
+#led3{
+	
+	float: right;
+	top: 199px;
+	right: 87px;
+}
+
+#led4{
+	
+	float: right;
+	top: 199px;
+	right: 32px;
+}
+
+.fixar{
+	position: absolute;
+}
+
+.setas{
+	width: 45px;
+	height: 45px;
+
+	text-align: center;
+	font-size: 20pt;
+	margin-left: 23px;
+
+}
+
+
+.enter{
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+	font-size: 20pt;
+	top: 330px;
+	left: 245px;
+}
+
+.reenter{
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+	font-size: 20pt;
+	top: 330px;
+	left: 245px;
+
+
+}
+
+.numeros{
+	top:120px;
+	right: 208px;
+}
+
+.numerosEnd{
+	top:160px;
+	right: 190px;
+}
+
+.tentativa{
+	top:330px;
+	right: 60px;
+
+}
+
+.btnsUp{
+
+	top:70px;
+	right: 220px;
+
+}
+
+.btnsDown{
+	top:220px;
+	right: 220px;
+
+}
+
+
+.font{
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+}
+
+.lang-btn{
+	background-color: transparent;
+	border: 10;
+	outline: none;
+	margin: -5px 10px 0 10px;
+	background-repeat: no-repeat;
+	background-size: 30px 30px;
+	height: 30px;
+	width: 30px;
+
+}
+
+.languages{
+	top: 50px;
+	right: 50px;
+}
+
+
+.sizeUp{
+	transform: scale(1.5);
+}
+
+*:focus{
+	outline: none;
+	border:0;
+}
+
+.easterEgg1{
+	width: 25px;
+	height: 25px;
+	/*background-color: #cdb57d;*/
+	background-color: transparent;
+	content: none;
+	top: 37px;
+	left: 42px;
+	cursor: pointer;
+	border:none;
+}
+
+.easterEgg2{
+	width: 25px;
+	height: 25px;
+	/*background-color: #cdb57d;*/
+	background-color: transparent;
+	content: none;
+	top: 37px;
+	left: 107px;
+	cursor: pointer;
+	border:none;
+}
+
+.easterEgg3{
+	width: 32px;
+	height: 10px;
+	/*background-color: #cdb57d;*/
+	background-color: transparent;
+	content: none;
+	top: 78px;
+	right: 67px;
+	cursor: pointer;
+	border:none;
+}
+
+.easterEgg4{
+	width: 32px;
+	height: 10px;
+	/*background-color: #cdb57d;*/
+	background-color: transparent;
+	content: none;
+	top: 156px;
+	right: 67px;
+	cursor: pointer;
+	border:none;
+}
+
+
+.label_correto{
+	font-size: 15pt;
+	top:425px;
+	left:250px;
+}
+
+.label_fora{
+	font-size: 15pt;
+	top:398px;
+	left:250px;
+}
+
+.label_verificar{
+	font-size: 15pt;
+	top:343px;
+	left:128px;
+}
+
+.label_tentativas{
+	font-size: 15pt;
+	top:310px;
+	right: 30px;
+}
+
+.label_derrota{
+	width: 260px;
+	font-size: 25pt;
+	top:60px;
+	left: 200px;
+	
+}
+
+
+
+.atencao{
+	color: #fff;
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+	font-size: 10pt;
+	top: 50px;
+	left: 45px;
+	width: 550px;
+}
+
+.ledsExemplo{
+	top: 250px;
+	left: 50px;
+
+}
+
+#ledOk{
+	width: 25px;
+}
+#ledCorreto{
+	width: 25px;
+	top: 60px;
+}
+
+.regra1{
+	
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+	font-size: 15pt;
+	top: 80px;
+	left: 55px;
+	width: 550px;
+	text-align: left;
+}
+
+.regra2{
+	
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+	font-size: 15pt;
+	top: 120px;
+	left: 55px;
+	width: 550px;
+	text-align: left;
+}
+
+.regra3{
+	
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+	font-size: 15pt;
+	top: 190px;
+	left: 55px;
+	width: 550px;
+	text-align: left;
+}
+
+
+.dicaOk{
+	
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+	font-size: 10pt;
+	top: 0px;
+	left: 30px;
+	width: 500px;
+	text-align: left;
+}
+
+.dicaCorreto{
+	
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+	font-size: 10pt;
+	top: 55px;
+	left: 30px;
+	width: 500px;
+	text-align: left;
+}
+
+.toasty{
+	height: 200px;
+	top: -226px;
+	right: 38px;
+}
