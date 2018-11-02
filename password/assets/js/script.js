@@ -196,7 +196,7 @@ var app = angular.module("password", []);
 
 			$scope.toasty = false;
 
-
+			//New Easter Egg
 			
 			var s = "";
 			$scope.easterEgg = function (k){
