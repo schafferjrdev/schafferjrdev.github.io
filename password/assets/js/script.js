@@ -214,6 +214,13 @@ var app = angular.module("password", []);
 					$scope.toasty = true;
 					var toasty = new Audio('./assets/images/toasty.mp3');
 					toasty.play();
+
+
+					setTimeout(function() {
+					 	console.log($scope.translate[$scope.idioma].textoEasterEgg);
+					 	$scope.toasty = false;
+
+					}, 350);
 					// timeout = $timeout(function(){
 					// 	//EasterEgg
 					// 	console.log($scope.translate[$scope.idioma].textoEasterEgg);
