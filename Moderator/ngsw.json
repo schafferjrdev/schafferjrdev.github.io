@@ -1,0 +1,82 @@
+{
+  "configVersion": 1,
+  "timestamp": 1551980595549,
+  "index": "/Moderator/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/Moderator/es2015-polyfills.4a4cfea0ce682043f4e9.js",
+        "/Moderator/favicon.ico",
+        "/Moderator/index.html",
+        "/Moderator/main.c25f5ecedbb5ec493c1c.js",
+        "/Moderator/polyfills.407a467dedb63cfdd103.js",
+        "/Moderator/runtime.a5dd35324ddfd942bef1.js",
+        "/Moderator/styles.81acab38b016ff57b9a2.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/Moderator/MaterialIcons-Regular.012cf6a10129e2275d79.woff",
+        "/Moderator/MaterialIcons-Regular.570eb83859dc23dd0eec.woff2",
+        "/Moderator/MaterialIcons-Regular.a37b0c01c0baf1888ca8.ttf",
+        "/Moderator/MaterialIcons-Regular.e79bfd88537def476913.eot",
+        "/Moderator/assets/icons/icon-128x128.png",
+        "/Moderator/assets/icons/icon-144x144.png",
+        "/Moderator/assets/icons/icon-152x152.png",
+        "/Moderator/assets/icons/icon-192x192.png",
+        "/Moderator/assets/icons/icon-384x384.png",
+        "/Moderator/assets/icons/icon-512x512.png",
+        "/Moderator/assets/icons/icon-72x72.png",
+        "/Moderator/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/Moderator/MaterialIcons-Regular.012cf6a10129e2275d79.woff": "c6c953c2ccb2ca9abb21db8dbf473b5a435f0082",
+    "/Moderator/MaterialIcons-Regular.570eb83859dc23dd0eec.woff2": "09963592e8c953cc7e14e3fb0a5b05d5042e8435",
+    "/Moderator/MaterialIcons-Regular.a37b0c01c0baf1888ca8.ttf": "fc05de31234e0090f7ddc28ce1b23af4026cb1da",
+    "/Moderator/MaterialIcons-Regular.e79bfd88537def476913.eot": "26fb8cecb5512223277b4d290a24492a0f09ede1",
+    "/Moderator/assets/icons/icon-128x128.png": "788a733ef89bf1581bff702dd596a839c9f016b4",
+    "/Moderator/assets/icons/icon-144x144.png": "92f5d80df2ee6081617ce5776304c4b14f285622",
+    "/Moderator/assets/icons/icon-152x152.png": "ed6caaffef2961dec56236177acec87936735bae",
+    "/Moderator/assets/icons/icon-192x192.png": "c22e52be8f87dad67c224ae8bd8b6d7e87b722c9",
+    "/Moderator/assets/icons/icon-384x384.png": "eb9d3d8c0019c93a123336bf0ed9136e5c66ab5d",
+    "/Moderator/assets/icons/icon-512x512.png": "18b9ebc43a7676ec5c76ce1cd039db3e48c350b4",
+    "/Moderator/assets/icons/icon-72x72.png": "2a76861ec5dab6c2586e3103f42c499f8308a210",
+    "/Moderator/assets/icons/icon-96x96.png": "00c1f83c4c48a2f6394eabb716dd2dcdcc898fca",
+    "/Moderator/es2015-polyfills.4a4cfea0ce682043f4e9.js": "b7a81c61d32b0b12737f0c13f45973ba391cd7f9",
+    "/Moderator/favicon.ico": "49fadf25b9fd65bdbd79970d126ed0ff46163999",
+    "/Moderator/index.html": "071698bfeed7abd8b3d6ef1d89998f8581fb78fc",
+    "/Moderator/main.c25f5ecedbb5ec493c1c.js": "d8a6c2af419ecfac567f854cdeae483805f36226",
+    "/Moderator/polyfills.407a467dedb63cfdd103.js": "ffa449995bf2eba2ccd0a002417214f7eb75e7b5",
+    "/Moderator/runtime.a5dd35324ddfd942bef1.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
+    "/Moderator/styles.81acab38b016ff57b9a2.css": "8ff09758ed4bd47af3b2fad3b4836f28bdba5fad"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
