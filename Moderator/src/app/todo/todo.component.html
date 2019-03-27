@@ -1,0 +1,284 @@
+<!--
+<div class="content" fxLayout="column">
+   <mat-tab-group mat-stretch-tabs>
+    <mat-tab >
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">person_add</mat-icon>
+            Add
+          </ng-template>
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <mat-form-field class="input-name">
+              <input  maxlength="10" matInput placeholder="Jogador"  id="input-player-name"[(ngModel)]="jogador.name">
+            </mat-form-field>
+            
+            <button mat-raised-button color="primary" (click)="save(jogador)">Add</button>
+          </div>
+          <mat-divider></mat-divider>
+          <div fxFlex>
+            
+            <mat-list>
+              <h3 mat-subheader>Jogadores ({{jogadores.length}})  |  Balanceamento ({{times.balance}})</h3>
+              
+              
+              <mat-divider></mat-divider>
+              <div class="lista-overflow">
+                <mat-list-item matRipple *ngFor="let jogador of jogadores">
+                  <h4 mat-subheader>{{jogador.name}}</h4>
+                  <mat-select [disabled]='jogador.dead' [(value)]="jogador.job" placeholder="Classe">
+                    <mat-option (click)="teamsUp()" *ngFor="let class_jogador of classes" [value]="class_jogador">
+                      {{class_jogador.name}}
+                    </mat-option>
+                  </mat-select>
+                  
+                  
+                  
+                  
+                  <button matRipple color="warn" mat-icon-button (click)="delete(jogador)">
+                    
+                    <mat-icon matRipple>close</mat-icon>
+                  </button>
+                  <mat-divider></mat-divider>
+                </mat-list-item>
+                
+              </div>
+            </mat-list>
+          </div>
+    </mat-tab>
+
+    <mat-tab fxLayout="row" fxLayoutAlign="start center">
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">gamepad</mat-icon>
+             Jogo
+        </ng-template>
+        
+        <mat-divider></mat-divider>
+        <h3 class="warn-color center-text"  *ngIf="jogadores.length==0"  mat-subheader>Adicione os jogadores!</h3>
+        <h3 fxLayout="row" fxLayoutAlign="start center" mat-subheader *ngIf="jogadores.length>0"><label class="primary-color">Aldeia {{times.aldeia}} </label><mat-icon>close</mat-icon><label class="warn-color"> {{times.lobos}} Lobos</label> </h3>
+        <p  class="label-balance" *ngIf="jogadores.length>0">Balanceamento: {{times.balance}}<button mat-button color="primary" (click)="dayPass()">Passar dia</button></p>
+        
+        <mat-divider></mat-divider>
+        
+
+        <div  class="lista-overflow-game" *ngIf="!showPlayer">
+        <mat-card  [ngClass]="{'cursed-border':jogador.job.name === 'Amaldiçoado','lupin-border':jogador.job.name === 'Lupino','lycan-border':jogador.job.name === 'Licano','good-border':jogador.job.team === 'good', 'bad-border':jogador.job.team === 'bad', 'dead':jogador.dead }" matRipple (click)="open(jogador)" class="player mat-elevation-z8" *ngFor="let jogador of jogadores">
+            <p class="grave-dead" *ngIf="jogador.dead">
+                 
+                <mat-icon class="grave" svgIcon="grave"></mat-icon>
+            </p>  
+          <mat-card-title *ngIf="!jogador.dead" [ngClass]="jogador.job.team === 'good' ? 'primary-color' : 'warn-color'">
+              {{jogador.job.name}}
+             </mat-card-title> 
+          <mat-card-subtitle>
+              {{jogador.name}}
+          </mat-card-subtitle>
+          
+          <mat-card-content>
+              <p *ngIf="!jogador.dead">
+                  <mat-icon [ngClass]="{'icon-gray':!jogador.target, 'icon-good':jogador.job.team === 'good', 'icon-bad': jogador.job.team === 'bad' }" class="example-tab-icon" svgIcon="atk"></mat-icon>
+                  <mat-icon *ngIf="jogador.job.name === 'Gigante'" [ngClass]="{'icon-gray':!jogador.toughTarget, 'icon-good':jogador.job.team === 'good', 'icon-bad': jogador.job.team === 'bad' }" class="example-tab-icon" svgIcon="atk"></mat-icon>
+                  <mat-icon *ngIf="hasClass('Guardião')" [ngClass]="{'icon-gray':!jogador.save, 'icon-good':jogador.job.team === 'good', 'icon-bad': jogador.job.team === 'bad' }" class="example-tab-icon" svgIcon="shield"></mat-icon>
+                  <mat-icon *ngIf="hasClass('Cupido')" [ngClass]="{'icon-gray':!jogador.love, 'icon-good':jogador.job.team === 'good', 'icon-bad': jogador.job.team === 'bad' }" class="example-tab-icon" svgIcon="rings"></mat-icon>
+                  <mat-icon *ngIf="hasClass('Encantador')" [ngClass]="{'icon-gray':!jogador.enchant, 'icon-good':jogador.job.team === 'good', 'icon-bad': jogador.job.team === 'bad' }" class="example-tab-icon" svgIcon="target-dummy"></mat-icon>
+                  <mat-icon *ngIf="jogador.job.name === 'Bruxa'" [ngClass]="{'icon-gray':!jogador.curePotion, 'icon-good':jogador.job.team === 'good', 'icon-bad': jogador.job.team === 'bad' }" class="example-tab-icon" svgIcon="cure"></mat-icon>
+                  <mat-icon *ngIf="jogador.job.name === 'Bruxa'" [ngClass]="{'icon-gray':!jogador.deathPotion, 'icon-good':jogador.job.team === 'good', 'icon-bad': jogador.job.team === 'bad' }" class="example-tab-icon" svgIcon="venom"></mat-icon>
+              </p>
+              
+            </mat-card-content>
+        </mat-card>
+        </div>
+
+        <div *ngIf="showPlayer">
+            <mat-card [ngClass]="{'dead':jogadores[playerEditIndex].dead}">
+                <mat-card-header>
+                    <mat-icon *ngIf="jogadores[playerEditIndex].job.team === 'bad'" mat-card-avatar  svgIcon="werewolf"></mat-icon>
+                    <mat-icon *ngIf="jogadores[playerEditIndex].job.team === 'good'" mat-card-avatar svgIcon="villager"></mat-icon>
+                  
+                  <mat-card-title class="title-player">{{jogadores && jogadores[playerEditIndex].name}}</mat-card-title>
+                  <mat-card-subtitle class="subtitle-player">
+                      <mat-select [disabled]='jogador.dead' [(value)]="jogadores[playerEditIndex].job" placeholder="Classe">
+                          <mat-option (click)="teamsUp()" *ngFor="let class_jogador of classes" [value]="class_jogador">
+                            {{class_jogador.name}}
+                          </mat-option>
+                        </mat-select>
+                  </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p [ngClass]="jogadores[playerEditIndex].job.team === 'good' ? 'primary-color' : 'warn-color'" >Status do jogador:</p>
+                <div class="status-player">
+                  <mat-checkbox [disabled]='jogadores[playerEditIndex].dead' [(ngModel)]="jogadores[playerEditIndex].target" class="example-tab-icon" [color]="jogadores[playerEditIndex].job.team === 'good' ? 'primary' : 'warn'">Atacar</mat-checkbox>
+                  <mat-checkbox *ngIf="jogadores[playerEditIndex].job.name === 'Gigante'" [disabled]='jogadores[playerEditIndex].dead' [(ngModel)]="jogadores[playerEditIndex].toughTarget" class="example-tab-icon" [color]="jogadores[playerEditIndex].job.team === 'good' ? 'primary' : 'warn'">Segundo Ataque</mat-checkbox>
+                  <mat-checkbox [disabled]='jogadores[playerEditIndex].dead' *ngIf="hasClass('Guardião')" [(ngModel)]="jogadores[playerEditIndex].save" class="example-tab-icon" [color]="jogadores[playerEditIndex].job.team === 'good' ? 'primary' : 'warn'">Proteger</mat-checkbox>
+                  <mat-checkbox [disabled]='jogadores[playerEditIndex].dead' *ngIf="hasClass('Cupido')" [(ngModel)]="jogadores[playerEditIndex].love" class="example-tab-icon" [color]="jogadores[playerEditIndex].job.team === 'good' ? 'primary' : 'warn'">Amor</mat-checkbox>
+                  <mat-checkbox [disabled]='jogadores[playerEditIndex].dead' *ngIf="hasClass('Encantador')" [(ngModel)]="jogadores[playerEditIndex].enchant" class="example-tab-icon" [color]="jogadores[playerEditIndex].job.team === 'good' ? 'primary' : 'warn'">Encantar</mat-checkbox>
+                  <mat-checkbox (change)="kill()" [(ngModel)]="jogadores[playerEditIndex].dead" class="example-tab-icon" [color]="jogadores[playerEditIndex].job.team === 'good' ? 'primary' : 'warn'">Matar</mat-checkbox>
+
+                  <div *ngIf="jogadores[playerEditIndex].job.name === 'Bruxa'">
+                    <p [ngClass]="jogadores[playerEditIndex].job.team === 'good' ? 'primary-color' : 'warn-color'" >Habilidades:</p>
+                    <mat-checkbox [disabled]='jogadores[playerEditIndex].dead' [(ngModel)]="jogadores[playerEditIndex].curePotion" class="example-tab-icon" [color]="jogadores[playerEditIndex].job.team === 'good' ? 'primary' : 'warn'">Poção da Cura</mat-checkbox>
+                    <mat-checkbox [disabled]='jogadores[playerEditIndex].dead' [(ngModel)]="jogadores[playerEditIndex].deathPotion" class="example-tab-icon" [color]="jogadores[playerEditIndex].job.team === 'good' ? 'primary' : 'warn'">Poção da Morte</mat-checkbox>
+                  </div>
+                  
+                </div>
+                </mat-card-content>
+                <mat-card-actions class="footer-card-player">
+                  <button mat-button [color]="jogadores[playerEditIndex].job.team === 'good' ? 'primary' : 'warn'" (click)="voltar()">Voltar</button>
+                </mat-card-actions>
+              </mat-card>
+        </div>
+        
+    </mat-tab>
+
+
+    <mat-tab >
+        <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">live_help</mat-icon>
+            Classes
+          </ng-template>
+          
+          <div  class="lista-overflow-game" >
+        <div class="filter">
+            <p>Filtro:</p>
+            <mat-checkbox [disabled]='jogadores.length < 1' class="example-tab-icon" (change)="filterClasses()" [(ngModel)]="filterInGame" color="accent">Em jogo</mat-checkbox>
+            <mat-checkbox [disabled]='jogadores.length < 1' class="example-tab-icon" (change)="filterClasses()" [(ngModel)]="sortGame" color="accent">Ordem no jogo</mat-checkbox>
+
+        </div>
+        <mat-divider></mat-divider>
+        
+        <mat-accordion>
+            <mat-expansion-panel class="classesInfo" *ngFor="let class of classesHelp">
+
+              <mat-expansion-panel-header>
+                <mat-panel-title [ngClass]="class.team === 'good' ? 'primary-color':'warn-color'">
+                    
+                    {{class.name}}
+                </mat-panel-title>
+                               
+              </mat-expansion-panel-header>
+              <p>Equipe:</p>
+              <mat-icon *ngIf="class.team === 'bad'" mat-card-avatar  svgIcon="werewolf"></mat-icon>
+              <mat-icon *ngIf="class.team === 'good'" mat-card-avatar svgIcon="villager"></mat-icon>
+              <p>{{class.desc}}</p>
+              <p>Balanceamento: {{class.power}}</p>
+              
+            </mat-expansion-panel>
+            
+          </mat-accordion>
+        </div>
+          
+          
+          
+    </mat-tab>
+  </mat-tab-group>
+</div>
+-->
+<!-- Tela INICIAL -->
+<div *ngIf="step == 0" class="content initial-screen" fxLayout="column" (click)="nextStep()">
+    <mat-icon class="blink_me icon-start icon-white" svgIcon="white-wolf"></mat-icon>
+    <span class="blink_me wolf-font">Toque para iniciar</span>
+
+</div>
+
+<div *ngIf="step == 1" class="content newgame-screen" fxLayout="column" >
+    <mat-icon class="icon-start icon-primary" svgIcon="white-wolf"></mat-icon>
+    <h2 class="primary-color wolf-font" mat-subheader>Lobisomem</h2>
+    <button mat-raised-button color="primary" (click)="nextStep()">Novo jogo</button>
+    <button [disabled]="!hasData" mat-raised-button color="primary" (click)="restart()">Continuar</button>
+
+</div>
+
+<!-- Tela de ADD -->
+
+<div *ngIf="step == 2" class="content" fxLayout="column">
+  
+         <div fxLayout="row" fxLayoutAlign="start center">
+             <mat-form-field class="input-name">
+               <input  maxlength="10" matInput placeholder="Jogador"  id="input-player-name"[(ngModel)]="jogador.name">
+             </mat-form-field>
+             
+             <button mat-raised-button color="primary" (click)="save(jogador)">Adicionar</button>
+           </div>
+           <mat-divider></mat-divider>
+           <div fxFlex>
+             
+             <mat-list>
+               <h3 mat-subheader>Jogadores ({{jogadores.length}})</h3>
+               
+               
+               <mat-divider></mat-divider>
+               <div class="lista-overflow">
+                 <mat-list-item matRipple *ngFor="let jogador of jogadores">
+                   <h4 mat-line>{{jogador.name}}</h4>
+                   
+                   <button matRipple color="warn" mat-icon-button (click)="delete(jogador)">
+                     
+                     <mat-icon matRipple>close</mat-icon>
+                   </button>
+                   <mat-divider></mat-divider>
+                 </mat-list-item>
+                 
+               </div>
+             </mat-list>
+           </div>
+           <button [disabled]="jogadores.length<7" mat-raised-button color="primary" (click)="nextStep()" >Escolher jogadores</button>
+     
+ </div>
+
+ <!-- Tela ADD CLASSES -->
+
+ <div *ngIf="step == 3" class="content" fxLayout="column">
+  
+    <div fxFlex>
+        
+        
+          <h5 class="subtitles" [ngClass]="{'gray-color':times.balancing==0, 'primary-color':times.balancing > 0, 'warn-color': times.balancing < 0 }">Balanceamento: ({{times.balancing}})</h5>
+          <h5 class="subtitles gray-color" >Faltam: ({{jogadores.length - times.totalClasses}})</h5>
+          
+          
+          
+          
+          
+          <mat-divider></mat-divider>
+          
+          <div class="lista-overflow-classes">
+            
+
+              <div *ngFor="let class of classes">
+              <mat-card >
+                  <mat-card-header>
+                    
+                    <mat-icon *ngIf="class.qnt>0" mat-card-avatar svgIcon="{{class.icon}}"></mat-icon>
+                    <mat-card-title class="darkgray-color" [ngClass]="{'primary-color':class.team === 'good' && class.qnt>0,'warn-color':class.team === 'bad' && class.qnt>0,'accent-color':class.team === 'neutral' && class.qnt>0}">
+                      {{class.name}} 
+                    
+                      
+                    </mat-card-title>
+                    <!-- <mat-card-subtitle>
+                        
+                    </mat-card-subtitle> -->
+                    <div class="spinner-number darkgray-color" [ngClass]="{'primary-color':class.team === 'good' && class.qnt>0,'warn-color':class.team === 'bad' && class.qnt>0,'accent-color':class.team === 'neutral' && class.qnt>0}">
+                        <button *ngIf="class.qnt>0" mat-icon-button (click)="sub(class)"><mat-icon>remove</mat-icon></button>
+                          <span *ngIf="class.qnt>0">{{class.qnt}}</span>
+                        <button [disabled]="(jogadores.length - times.totalClasses) <= 0" mat-icon-button (click)="add(class)"><mat-icon >add</mat-icon></button>
+                    </div> 
+                  </mat-card-header>
+
+                  <mat-card-content>
+                    <p>
+                        {{class.desc}}
+                    </p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                      
+                  </mat-card-actions>
+                  
+                </mat-card>
+                <mat-divider></mat-divider>
+              </div>
+            
+          </div>
+       
+      </div>
+      <button [disabled]="(jogadores.length - times.totalClasses)>0" mat-raised-button color="primary" (click)="addClasses()">Escolher classes</button>
+      <button mat-stroked-button color="primary" (click)="prevStep()">Voltar</button>
+
+</div>

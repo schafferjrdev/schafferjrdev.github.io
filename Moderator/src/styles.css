@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "~material-design-icons/iconfont/material-icons.css";
+
+
+
+.accent-color {
+    color: #ffd740 !important;
+}
+
+.white-color {
+    color: #fff !important;
+}
+.primary-color {
+    color: #673ab7 !important;
+}
+
+.warn-color{
+    color: #f44336 !important;
+}
+
+
+.accent-bgcolor {
+    background-color: #ffd740 !important;
+}
+
+.primary-bgcolor {
+    background-color: #673ab7 !important;
+}
+
+.warn-bgcolor{
+    background-color: #f44336 !important;
+}
