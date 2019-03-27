@@ -56,7 +56,7 @@ export class TodoComponent implements OnInit {
   jogador: Jogador = new Jogador();
   jogadores: Jogador[] = [];
 
-  classesForSort: string[];
+  classesForSort: Classes[];
 
   times = {
     aldeia:0,
@@ -274,12 +274,7 @@ export class TodoComponent implements OnInit {
     
     this.classes = _.sortBy(this.classes, ['team', 'power']);  
     this.classesHelp = _.sortBy(this.classesHelp, ['team', 'power']);
-    this.classesInGame = _.concat(this.classesInGame,addMore("Aldeão", 3));
-    this.classesInGame = _.concat(this.classesInGame,addMore("Lobo", 3));
-    this.classesInGame = _.pull(this.classesInGame,undefined);
-    this.classesInGame = _.shuffle(this.classesInGame);
-    // var pulled = _.pullAt(array, 0);
-    console.log(this.classesInGame);
+    
     
     
   }
@@ -474,6 +469,10 @@ export class TodoComponent implements OnInit {
     this.step++;
   }
 
+  stepTo(num:number){
+    this.step = num;
+  }
+
   prevStep(){
     this.step--;
   }
@@ -481,13 +480,17 @@ export class TodoComponent implements OnInit {
   saveLocal(){
     if (typeof(Storage) !== "undefined") {
       localStorage.setItem("players", JSON.stringify(this.jogadores));
+      localStorage.setItem("classesOn", JSON.stringify(this.classesInGame));
+      localStorage.setItem("allClasses", JSON.stringify(this.classes));
     }
   }
 
   restart(){
     if (typeof(Storage) !== "undefined" && localStorage["players"]) {
       this.jogadores = JSON.parse(localStorage.getItem("players"));
-      this.nextStep();
+      this.classesInGame = JSON.parse(localStorage.getItem("classesOn"));
+      this.classes = JSON.parse(localStorage.getItem("allClasses"));
+      this.stepTo(4);
     }else{
       console.log("No data saved");
     }
@@ -495,7 +498,20 @@ export class TodoComponent implements OnInit {
   }
 
   addClasses(){
-    console.log(this.classesInGame);
+    
+   for (let i = 0; i < this.classesInGame.length; i++) {
+    this.classesForSort = _.concat(this.classesForSort,addMore(this.classesInGame[i], this.classesInGame[i].qnt));
+    
+   }
+    
+    this.classesForSort = _.pull(this.classesForSort,undefined);
+    this.classesForSort = _.shuffle(this.classesForSort);
+    for (let j = 0; j < this.jogadores.length; j++) {
+      this.jogadores[j].job = this.classesForSort[j];
+      
+    }
+    this.saveLocal();
+    this.nextStep();
   }
 
   
